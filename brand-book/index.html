@@ -4,149 +4,133 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LUMA · Brand book</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Caladea y Carlito son equivalentes métricos libres de Cambria y Calibri -->
-<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
+  /* Tipografías oficiales del manual (archivos locales en assets/fonts) */
+  @font-face { font-family: "Calistoga"; src: url("../assets/fonts/Calistoga-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-300-normal.woff2") format("woff2"); font-weight: 300; font-style: normal; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-300-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+
   :root {
-    --salvia: #7A8765;
-    --crema: #F4ECD8;
-    --oliva: #3F4635;
+    /* Paleta oficial (Manual de marca LUMA, @chabon.mkt, marzo 2026) */
+    --salvia: #AAB9A6;
+    --oliva: #6C7065;
+    --rosa: #D9C7BF;
+    --taupe: #A19089;
+    /* Apoyo */
     --blanco: #FFFFFF;
-    --salvia-suave: #E6E4CF; /* tinte de trabajo solo para este documento; HEX oficial a definir */
-    --serif: Cambria, Caladea, Georgia, "Times New Roman", serif;
-    --sans: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
-    --linea: rgba(63, 70, 53, .18);
+    --crema: #F6F2EA; /* provisorio: HEX del crema texturado a completar */
+    --display: "Calistoga", Georgia, serif;
+    --sans: "Metropolis", "Helvetica Neue", Arial, sans-serif;
+    --linea: rgba(108, 112, 101, .22);
+    --papel: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .44 0 0 0 0 .40 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   * { box-sizing: border-box; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body {
     margin: 0;
-    background: var(--crema);
+    background: var(--crema) var(--papel);
     color: var(--oliva);
-    font: 17px/1.55 var(--sans);
+    font: 400 16px/1.6 var(--sans);
   }
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 72px 48px;
-    border-bottom: 1px solid var(--linea);
-    position: relative;
-  }
-  h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin: 0; }
-  h2 { font-size: 44px; margin-bottom: 8px; }
-  h3 { font-size: 24px; margin: 36px 0 12px; }
+  .page { max-width: 980px; margin: 0 auto; padding: 72px 48px; border-bottom: 1px solid var(--linea); position: relative; }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 400; line-height: 1.08; margin: 0; letter-spacing: -.005em; }
+  h2 { font-size: 46px; }
+  h3 { font-size: 25px; margin: 40px 0 14px; }
+  h4 { font-size: 20px; margin: 0 0 8px; }
   p { margin: 0 0 12px; }
-  .kicker {
-    font: 700 13px/1 var(--sans);
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--salvia);
-    margin-bottom: 14px;
-  }
-  .lead { font-size: 19px; max-width: 680px; margin-top: 14px; }
-  .u { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
-  .grid { display: grid; gap: 20px; }
+  b, strong { font-weight: 600; }
+  .light { font-family: var(--sans); font-weight: 300; }
+  .kicker { font: 600 12px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--taupe); margin-bottom: 14px; }
+  .lead { font-size: 18px; max-width: 700px; margin-top: 16px; }
+  .u { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .14em; text-decoration-skip-ink: none; }
+  .grid { display: grid; gap: 18px; }
   .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .card {
-    background: var(--blanco);
-    border-radius: 14px;
-    padding: 22px 24px;
-  }
-  .card h4 { font: 700 20px/1.2 var(--serif); margin: 0 0 8px; }
+  .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .card { background: var(--blanco); border-radius: 16px; padding: 22px 24px; }
   .card p:last-child, .card ul:last-child { margin-bottom: 0; }
   ul { padding-left: 20px; margin: 0 0 12px; }
   li { margin-bottom: 4px; }
-  .todo {
-    border: 2px dashed var(--salvia);
-    border-radius: 12px;
-    padding: 14px 18px;
-    background: rgba(122, 135, 101, .08);
-    font-size: 15px;
-  }
-  .todo::before {
-    content: "A COMPLETAR";
-    display: block;
-    font: 700 11px/1 var(--sans);
-    letter-spacing: .14em;
-    color: var(--salvia);
-    margin-bottom: 6px;
-  }
-  .note { font-size: 14px; opacity: .8; }
+  .note { font-size: 14px; color: var(--taupe); }
+  .todo { border: 2px dashed var(--taupe); border-radius: 12px; padding: 14px 18px; background: rgba(217, 199, 191, .35); font-size: 15px; }
+  .todo::before { content: "A COMPLETAR"; display: block; font: 700 11px/1 var(--sans); letter-spacing: .14em; color: var(--taupe); margin-bottom: 6px; }
+  .warn { border-left: 4px solid var(--taupe); background: var(--blanco); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 15px; }
+  .warn b { color: var(--oliva); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; background: var(--blanco); border-radius: 16px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  th { font: 600 11.5px/1.2 var(--sans); letter-spacing: .12em; text-transform: uppercase; background: var(--oliva); color: var(--blanco); }
+  tr:last-child td { border-bottom: 0; }
+  code { font: 600 14px/1 ui-monospace, Menlo, Consolas, monospace; }
 
   /* Portada */
-  .cover {
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .cover .waves { position: absolute; inset: auto 0 0 0; height: 46%; }
-  .cover h1 { font-size: clamp(56px, 10vw, 104px); }
-  .cover h1 em { font-weight: 400; display: block; font-size: .55em; letter-spacing: -.01em; }
-  .cover .sub { font: 700 14px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-top: 22px; }
-  .cover .logo-slot { width: 112px; height: 112px; border-radius: 50%; margin-bottom: 36px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; line-height: 1.2; padding: 12px; }
+  .cover { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; overflow: hidden; background: var(--oliva) var(--papel); color: var(--blanco); max-width: none; }
+  .cover > * { position: relative; }
+  .cover .inner { max-width: 884px; width: 100%; margin: 0 auto; }
+  .cover img.logo { width: 300px; display: block; margin-bottom: 56px; }
+  .cover h1 { font-size: clamp(44px, 7vw, 76px); }
+  .cover h1 .light { display: block; font-size: .5em; margin-bottom: 8px; }
+  .cover .kicker { color: var(--salvia); }
+  .cover .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 40%; color: var(--salvia); opacity: .45; }
+
+  /* Logo */
+  .logo-tile { border-radius: 16px; display: flex; align-items: center; justify-content: center; padding: 34px; aspect-ratio: 4 / 3; }
+  .logo-tile img { width: 78%; max-width: 280px; }
+  .logo-cap { font-size: 14px; margin-top: 8px; }
+  .avatar { width: 150px; height: 150px; border-radius: 50%; background: var(--salvia); display: flex; align-items: center; justify-content: center; }
+  .avatar img { width: 68%; }
 
   /* Paleta */
-  .swatch { border-radius: 14px; overflow: hidden; background: var(--blanco); }
-  .swatch .chip { height: 140px; display: flex; align-items: flex-end; padding: 16px; font: 700 26px/1 var(--serif); }
-  .swatch .meta { padding: 16px 18px; font-size: 15px; }
-  .swatch .meta b { display: block; font-size: 17px; }
-  .swatch code { font: 700 15px/1 ui-monospace, Menlo, Consolas, monospace; }
-  table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--blanco); border-radius: 14px; overflow: hidden; }
-  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; }
-  th { font: 700 12px/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; background: var(--oliva); color: var(--crema); }
-  tr:last-child td { border-bottom: 0; }
-  .pair { display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: var(--serif); }
+  .swatch { border-radius: 16px; overflow: hidden; background: var(--blanco); }
+  .swatch .chip { height: 130px; display: flex; align-items: flex-end; padding: 14px 16px; font: 400 22px/1 var(--display); }
+  .swatch .meta { padding: 14px 16px; font-size: 13.5px; line-height: 1.5; }
+  .swatch .meta b { display: block; font-size: 15px; }
+  .pair { display: inline-block; padding: 4px 10px; border-radius: 6px; font: 400 15px/1.3 var(--display); }
 
   /* Tipografía */
-  .type-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--linea); align-items: baseline; }
+  .type-row { display: grid; grid-template-columns: 210px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--linea); align-items: center; }
   .type-row:last-child { border-bottom: 0; }
-  .type-row .spec { font-size: 13px; line-height: 1.4; opacity: .85; }
-  .type-row .spec b { display: block; font-size: 14px; opacity: 1; }
+  .type-row .spec { font-size: 13px; line-height: 1.45; }
+  .type-row .spec b { display: block; font-size: 14px; }
+
+  /* Recursos gráficos */
+  .res { background: var(--blanco); border-radius: 16px; overflow: hidden; }
+  .res .demo { aspect-ratio: 4 / 3; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; container-type: inline-size; background: var(--crema) var(--papel); }
+  .res .txt { padding: 14px 16px 16px; font-size: 13.5px; line-height: 1.45; }
+  .res .txt b { display: block; font: 400 17px/1.2 var(--display); margin-bottom: 4px; font-weight: 400; }
+  .waves-demo { position: absolute; inset: 30% 0 0 0; color: var(--oliva); opacity: .55; }
+  .sticker { position: relative; width: 38cqw; aspect-ratio: 3/4; border-radius: 48% 48% 12% 12%; border: 2.6cqw solid var(--blanco); box-shadow: 0 1.6cqw 3cqw rgba(108,112,101,.25); background: linear-gradient(160deg, #C7BDB3, #A9A096); display: flex; align-items: flex-end; justify-content: center; }
+  .sticker::before { content: ""; position: absolute; top: 14%; left: 50%; width: 36%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: rgba(255,255,255,.45); }
+  .sticker::after { content: ""; width: 78%; height: 42%; border-radius: 50% 50% 0 0; background: rgba(255,255,255,.45); }
+  .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #9EA69A 0 14px, #959D91 14px 28px); }
+  .veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(108,112,101,.15), rgba(108,112,101,.78)); }
+  .tape { display: inline-block; background: var(--blanco); padding: .2em .5em .26em; font: 400 9cqw/1 var(--display); color: var(--oliva); box-shadow: 0 .6cqw 1.6cqw rgba(0,0,0,.12); clip-path: polygon(1% 4%, 99% 0, 100% 96%, 0 100%); }
+  .hl { background: linear-gradient(transparent 52%, var(--rosa) 52%, var(--rosa) 92%, transparent 92%); padding: 0 .12em; }
+  .notebook { position: absolute; inset: 8% 10%; background: var(--blanco) repeating-linear-gradient(transparent 0 calc(7.2cqw - 1px), #CBD3C8 calc(7.2cqw - 1px) 7.2cqw); border-left: .6cqw solid var(--rosa); box-shadow: 0 1cqw 3cqw rgba(0,0,0,.1); padding: 4cqw 6cqw; font: 300 5.4cqw/7.2cqw var(--sans); color: var(--oliva); }
+  .boxed { position: relative; width: 74%; border: .7cqw solid var(--oliva); border-radius: 5cqw; padding: 9cqw 6cqw 6cqw; font: 400 4.6cqw/1.4 var(--sans); color: var(--oliva); text-align: center; }
+  .pill { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--oliva); color: var(--blanco); font: 700 4.4cqw/1 var(--sans); letter-spacing: .12em; padding: 2.4cqw 5cqw; border-radius: 99px; white-space: nowrap; }
+  .dots { position: absolute; top: 8%; right: 8%; display: flex; gap: 1.6cqw; }
+  .dots i { width: 2.4cqw; height: 2.4cqw; border-radius: 50%; border: .4cqw solid currentColor; }
+  .dots i.on { background: currentColor; }
+  .btn { display: inline-block; background: var(--oliva); color: var(--blanco); font: 400 5cqw/1 var(--display); padding: 3cqw 6cqw; border-radius: 2.4cqw; }
+  .face { width: 22cqw; aspect-ratio: 1; border-radius: 50%; background: linear-gradient(160deg, #C7BDB3, #A9A096); flex: none; }
 
   /* Mini slides */
   .slides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-  .slide {
-    aspect-ratio: 4 / 5;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    padding: 9% 7.4%;
-    display: flex;
-    flex-direction: column;
-    container-type: inline-size;
-  }
-  .slide .t { font: 700 11cqw/1.05 var(--serif); letter-spacing: -.025em; }
-  .slide .t em { font-weight: 400; }
-  .slide .s { font: 700 3.6cqw/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-top: 4cqw; }
-  .slide .b { font: 400 4.6cqw/1.4 var(--sans); margin-top: 4cqw; }
-  .slide .num { font: 700 34cqw/.9 var(--serif); letter-spacing: -.04em; }
-  .slide.claro { background: var(--salvia-suave); color: var(--oliva); }
-  .slide.oliva { background: var(--salvia); color: var(--blanco); }
-  .slide.foto { color: var(--oliva); background: var(--crema); }
-  .slide.foto .ph {
-    position: absolute; inset: 0 0 38% 0;
-    background:
-      repeating-linear-gradient(135deg, rgba(63,70,53,.10) 0 12px, rgba(63,70,53,.04) 12px 24px),
-      #CFC9B2;
-    display: flex; align-items: center; justify-content: center;
-    font: 700 3.4cqw/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--oliva); text-align: center;
-  }
-  .slide.foto .ph::after { content: ""; position: absolute; inset: 55% 0 0 0; background: linear-gradient(to bottom, rgba(244,236,216,0), var(--crema)); }
-  .slide.foto .content { margin-top: auto; position: relative; }
-  .slide .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 48%; }
-  .slide .sticker {
-    position: absolute; right: 9%; bottom: 7%; width: 40%; aspect-ratio: 3 / 4;
-    background: #CFC9B2; border: 2.4cqw solid var(--blanco); border-radius: 46% 46% 10% 10%;
-    box-shadow: 0 1.4cqw 3cqw rgba(63,70,53,.18);
-    display: flex; align-items: center; justify-content: center; text-align: center;
-    font: 700 3cqw/1.25 var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 6%;
-  }
-  .slide .brand { position: absolute; left: 7.4%; bottom: 5.5%; font: 700 3.4cqw/1 var(--sans); letter-spacing: .14em; }
+  .slide { aspect-ratio: 4 / 5; border-radius: 10px; position: relative; overflow: hidden; padding: 11% 7.4% 9%; display: flex; flex-direction: column; container-type: inline-size; }
+  .slide .t { font: 400 10.5cqw/1.02 var(--display); }
+  .slide .t .light { font-size: .78em; display: block; }
+  .slide .s { font: 600 3.4cqw/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; margin-top: 4cqw; }
+  .slide .b { font: 400 4.4cqw/1.4 var(--sans); margin-top: 4cqw; }
+  .slide.claro { background: var(--salvia) var(--papel); color: var(--oliva); }
+  .slide.oscuro { background: var(--oliva) var(--papel); color: var(--blanco); }
+  .slide.oscuro b { color: var(--salvia); }
+  .slide.foto { color: var(--blanco); justify-content: flex-end; }
+  .slide.foto > .t, .slide.foto > .s { position: relative; }
   .caption { font-size: 14px; margin-top: 8px; }
 
   /* Zonas seguras */
@@ -154,52 +138,51 @@
   .safe { position: relative; background: var(--blanco); border-radius: 8px; overflow: hidden; container-type: inline-size; }
   .safe.post { aspect-ratio: 1080 / 1350; }
   .safe.reel { aspect-ratio: 1080 / 1920; max-width: 74%; }
-  .safe .zone { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; font: 700 3.6cqw/1.25 var(--sans); padding: 4px; }
-  .safe .margin { inset: 0; border: solid rgba(122,135,101,.25); }
+  .safe .zone { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; font: 600 3.6cqw/1.25 var(--sans); padding: 4px; }
+  .safe .margin { inset: 0; border: solid rgba(170,185,166,.45); }
   .safe .grid-crop { top: 0; bottom: 0; left: 3.7%; right: 3.7%; border-left: 2px dashed var(--oliva); border-right: 2px dashed var(--oliva); }
-  .safe .live { border: 2px solid var(--salvia); background: rgba(122,135,101,.10); }
-  .safe .danger { background: rgba(63,70,53,.14); color: var(--oliva); }
+  .safe .live { border: 2px solid var(--oliva); background: rgba(170,185,166,.18); }
+  .safe .danger { background: rgba(161,144,137,.25); }
 
   /* Voz */
-  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 14px; overflow: hidden; background: var(--blanco); margin-bottom: 14px; }
-  .do-dont > div { padding: 16px 20px; font-size: 16px; }
-  .do-dont .no { border-right: 1px solid var(--linea); color: rgba(63,70,53,.75); }
-  .do-dont .si { background: rgba(122,135,101,.10); }
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; border-radius: 16px; overflow: hidden; background: var(--blanco); margin-bottom: 12px; }
+  .do-dont > div { padding: 15px 20px; font-size: 15.5px; }
+  .do-dont .no { border-right: 1px solid var(--linea); color: var(--taupe); }
+  .do-dont .si { background: rgba(170, 185, 166, .22); }
   .do-dont .tag { display: block; font: 700 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
-  .do-dont .no .tag { color: rgba(63,70,53,.6); }
-  .do-dont .si .tag { color: var(--salvia); }
-  .do-dont .why { grid-column: 1 / -1; border-top: 1px solid var(--linea); font-size: 14px; padding: 10px 20px; }
-  .strike { text-decoration: line-through; text-decoration-color: rgba(63,70,53,.45); }
+  .strike { text-decoration: line-through; text-decoration-color: rgba(161,144,137,.7); color: var(--taupe); }
 
   /* Estructura */
   .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; counter-reset: s; }
-  .step { background: var(--blanco); border-radius: 12px; padding: 16px; font-size: 14px; }
-  .step::before { counter-increment: s; content: counter(s); display: block; font: 700 40px/1 var(--serif); color: var(--salvia); margin-bottom: 8px; }
-  .step b { display: block; font: 700 16px/1.2 var(--serif); margin-bottom: 6px; }
+  .step { background: var(--blanco); border-radius: 14px; padding: 16px; font-size: 13.5px; }
+  .step::before { counter-increment: s; content: counter(s); display: block; font: 400 42px/1 var(--display); color: var(--rosa); margin-bottom: 8px; -webkit-text-stroke: 1px var(--taupe); }
+  .step b { display: block; font: 400 16px/1.2 var(--display); margin-bottom: 6px; }
 
-  .footer { text-align: center; font-size: 13px; padding: 40px 24px 56px; opacity: .75; }
+  .footer { text-align: center; font-size: 13px; padding: 40px 24px 56px; color: var(--taupe); }
 
   @media screen and (max-width: 760px) {
-    body { font-size: 16px; }
     .page { padding: 48px 16px; }
     h2 { font-size: 34px; }
-    .g2, .g3, .safe-wrap, .do-dont { grid-template-columns: 1fr; }
+    .g2, .g3, .g4, .safe-wrap, .do-dont { grid-template-columns: 1fr; }
+    .g4.keep2 { grid-template-columns: 1fr 1fr; }
     .do-dont .no { border-right: 0; border-bottom: 1px solid var(--linea); }
     .slides { grid-template-columns: 1fr 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     .type-row { grid-template-columns: 1fr; gap: 6px; }
     .safe.reel { max-width: 100%; }
+    .cover img.logo { width: 220px; }
   }
 
   @page { size: A4; margin: 0; }
   @media print {
+    :root { --papel: none; } /* la textura rasterizada pesa demasiado en PDF */
     body { font-size: 12.5px; }
     .page { padding: 14mm; border: 0; break-after: page; max-width: none; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
     .page:last-of-type { break-after: auto; }
     .cover { min-height: 297mm; }
-    h2 { font-size: 32px; }
-    .card, .swatch, .slide, .do-dont, .step, table, .type-row, .safe, .safe-wrap > div, .todo { break-inside: avoid; }
-    h2, h3 { break-after: avoid; page-break-after: avoid; }
+    h2 { font-size: 34px; }
+    .card, .swatch, .slide, .do-dont, .step, table, .type-row, .safe, .safe-wrap > div, .todo, .res, .warn, .logo-tile { break-inside: avoid; }
+    h2, h3 { break-after: avoid; }
     .footer { display: none; }
   }
 </style>
@@ -208,9 +191,8 @@
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <!-- Líneas onduladas finas: recurso gráfico del fondo claro -->
     <symbol id="waves" viewBox="0 0 400 200" preserveAspectRatio="none">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" vector-effect="non-scaling-stroke">
         <path d="M0 40 C 60 10, 120 70, 200 40 S 340 10, 400 40"/>
         <path d="M0 62 C 60 32, 120 92, 200 62 S 340 32, 400 62"/>
         <path d="M0 84 C 60 54, 120 114, 200 84 S 340 54, 400 84"/>
@@ -220,17 +202,25 @@
         <path d="M0 172 C 60 142, 120 202, 200 172 S 340 142, 400 172"/>
       </g>
     </symbol>
+    <symbol id="arrow" viewBox="0 0 120 80">
+      <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 62 C 30 20, 70 10, 104 26"/>
+        <path d="M90 14 L 106 27 L 88 38"/>
+      </g>
+    </symbol>
+    <symbol id="scribble" viewBox="0 0 200 60">
+      <path d="M6 40 C 40 10, 60 54, 92 30 S 150 8, 194 34" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
   </defs>
 </svg>
 
 <!-- ============ PORTADA ============ -->
 <section class="page cover">
-  <svg class="waves" style="color: var(--salvia); opacity:.55"><use href="#waves"/></svg>
-  <div style="position:relative">
-    <div class="logo-slot" style="border:2px dashed var(--salvia);background:rgba(122,135,101,.08);color:var(--salvia);font-weight:700;letter-spacing:.08em">LOGO<br>A COMPLETAR</div>
-    <div class="kicker">Brand book · v1 · octubre 2026</div>
-    <h1>LUMA<em>Centro Psicopedagógico Integral</em></h1>
-    <div class="sub">Identidad visual, voz y reglas de contenido</div>
+  <svg class="waves"><use href="#waves"/></svg>
+  <div class="inner">
+    <img class="logo" src="../assets/logo-luma-blanco.svg" alt="LUMA Centro Psicopedagógico Integral">
+    <div class="kicker">Brand book · v2 · octubre 2026</div>
+    <h1><span class="light">Identidad, voz y reglas de contenido</span>LUMA Centro Psicopedagógico Integral</h1>
   </div>
 </section>
 
@@ -241,28 +231,13 @@
   <p class="lead">LUMA es un centro psicopedagógico integral dirigido por la Lic. Julieta Gárate (Juli), que acompaña procesos de aprendizaje y de elección en todo el ciclo vital.</p>
 
   <div class="grid g2" style="margin-top:28px">
-    <div class="card">
-      <h4>Propósito</h4>
-      <p>Acompañar a cada persona a <b>conocerse</b>, reconocer sus <b>fortalezas</b> y construir su <b>proyecto de vida</b>, con mirada psicopedagógica.</p>
-    </div>
-    <div class="card">
-      <h4>Servicios</h4>
-      <ul>
-        <li>Clínica psicopedagógica</li>
-        <li>Orientación vocacional y ocupacional (OVO)</li>
-        <li>Servicios educativos</li>
-      </ul>
-      <p class="note">Modalidad virtual. En contenido de campaña se habla desde la necesidad de la consulta, no desde la modalidad.</p>
-    </div>
-    <div class="card">
-      <h4>Enfoque OVO</h4>
-      <p>Autoconocimiento, identificación de fortalezas y construcción del proyecto de vida. Los tests (CHASIDE, SDS de Holland, cuestionario de valores) son <b>una parte</b>: el proceso integra intereses, contexto, mandatos familiares e historia personal.</p>
-    </div>
-    <div class="card">
-      <h4>Profesional</h4>
-      <p><b>Lic. Julieta Gárate</b>, psicopedagoga. Prof. de Nivel Inicial, Lic. en Psicopedagogía, Lic. en Educación. Ejerce en todo el ciclo vital.</p>
-      <p class="note">Siempre en presente. Nunca decir que Juli trabaja solo en LUMA ni que LUMA nació de la orientación vocacional.</p>
-    </div>
+    <div class="card"><h4>Propósito</h4><p>Acompañar a cada persona a <b>conocerse</b>, reconocer sus <b>fortalezas</b> y construir su <b>proyecto de vida</b>, con mirada psicopedagógica.</p></div>
+    <div class="card"><h4>Servicios</h4>
+      <ul><li>Clínica psicopedagógica</li><li>Orientación vocacional y ocupacional (OVO)</li><li>Servicios educativos</li></ul>
+      <p class="note">Modalidad virtual. En contenido de campaña se habla desde la necesidad de la consulta, no desde la modalidad.</p></div>
+    <div class="card"><h4>Enfoque OVO</h4><p>Autoconocimiento, identificación de fortalezas y construcción del proyecto de vida. Los tests (CHASIDE, SDS de Holland, cuestionario de valores) son <b>una parte</b>: el proceso integra intereses, contexto, mandatos familiares e historia personal.</p></div>
+    <div class="card"><h4>Profesional</h4><p><b>Lic. Julieta Gárate</b>, psicopedagoga. Prof. de Nivel Inicial, Lic. en Psicopedagogía, Lic. en Educación. Ejerce en todo el ciclo vital.</p>
+      <p class="note">Siempre en presente. Nunca decir que Juli trabaja solo en LUMA ni que LUMA nació de la orientación vocacional.</p></div>
   </div>
 
   <h3>Dos públicos, dos conversaciones</h3>
@@ -284,136 +259,199 @@
     <div class="card"><h4>Formación triple</h4><p>Nivel Inicial, Psicopedagogía y Educación: una lectura del aprendizaje a lo largo de todo el ciclo vital.</p></div>
     <div class="card"><h4>La familia incluida</h4><p>El proceso integra a la familia en momentos definidos, con el adolescente en el centro.</p></div>
   </div>
-  <div class="todo" style="margin-top:20px">Slogan / frase de marca (si se define). Hoy el brief no fija ninguno.</div>
+  <div class="todo" style="margin-top:18px">Slogan / frase de marca, si se define. Hoy no hay uno oficial.</div>
 </section>
 
-<!-- ============ 2. PALETA ============ -->
+<!-- ============ 2. LOGO ============ -->
 <section class="page">
-  <div class="kicker">02 · Color</div>
-  <h2>Paleta <span class="u">y usos</span></h2>
-  <p class="lead">Tres colores de marca más blanco. El crema da calidez, la salvia identifica y el oliva oscuro sostiene la lectura.</p>
+  <div class="kicker">02 · Logo</div>
+  <h2>Un rompecabezas <span class="u">que encaja</span></h2>
+  <p class="lead">Isotipo de cuatro piezas en trazo continuo, wordmark "LUMA" y bajada "CENTRO PSICOPEDAGÓGICO INTEGRAL". Archivos vectoriales en <code>assets/</code>, extraídos del manual oficial.</p>
 
-  <div class="grid g3" style="margin-top:28px">
-    <div class="swatch">
-      <div class="chip" style="background:var(--salvia);color:var(--blanco)">Salvia</div>
-      <div class="meta"><b>Verde salvia</b><code>#7A8765</code><br>Fondo liso de slides, isotipo, acentos, subtítulos sobre crema, líneas onduladas.</div>
-    </div>
-    <div class="swatch">
-      <div class="chip" style="background:var(--crema);color:var(--oliva);box-shadow:inset 0 0 0 1px var(--linea)">Crema</div>
-      <div class="meta"><b>Crema</b><code>#F4ECD8</code><br>Fondo principal. Texto sobre fondo salvia u oliva.</div>
-    </div>
-    <div class="swatch">
-      <div class="chip" style="background:var(--oliva);color:var(--crema)">Oliva</div>
-      <div class="meta"><b>Oliva oscuro</b><code>#3F4635</code><br>Títulos y texto sobre fondos claros.</div>
+  <h3>Versiones</h3>
+  <div class="grid g3">
+    <div><div class="logo-tile" style="background:var(--blanco)"><img src="../assets/logo-luma.svg" alt="Logo full color"></div><p class="logo-cap"><b>Full color</b> · gris oliva sobre fondos claros. Versión principal.</p></div>
+    <div><div class="logo-tile" style="background:var(--oliva)"><img src="../assets/logo-luma-blanco.svg" alt="Logo en blanco"></div><p class="logo-cap"><b>Blanco</b> · sobre gris oliva, salvia claro o foto con velo.</p></div>
+    <div><div class="logo-tile" style="background:var(--crema) var(--papel)"><img src="../assets/logo-luma-taupe.svg" alt="Logo a un color taupe"></div><p class="logo-cap"><b>1 solo color</b> · en taupe (o gris oliva).</p></div>
+    <div><div class="logo-tile" style="background:var(--blanco)"><img src="../assets/logo-luma-negro.svg" alt="Logo blanco y negro"></div><p class="logo-cap"><b>B&amp;N</b> · cuando los colores de la paleta no están disponibles.</p></div>
+    <div><div class="logo-tile" style="background:var(--crema) var(--papel)"><div class="avatar"><img src="../assets/isotipo-luma-blanco.svg" alt="Isotipo sobre círculo salvia"></div></div><p class="logo-cap"><b>Perfil / destacadas</b> · logo en blanco sobre círculo salvia claro.</p></div>
+    <div><div class="logo-tile" style="background:var(--salvia)"><img src="../assets/isotipo-luma-blanco.svg" alt="Isotipo solo" style="width:40%"></div><p class="logo-cap"><b>Isotipo solo</b> · fondos de stories y piezas donde la marca ya está presente.</p></div>
+  </div>
+
+  <h3>Área segura</h3>
+  <div class="grid g2" style="align-items:center">
+    <img src="../assets/logo-area-segura.png" alt="Área segura del logo según el manual" style="width:100%;border-radius:16px;background:#fff">
+    <div>
+      <p>Según la grilla del manual, el módulo <b>x</b> equivale al grosor del asta vertical de la "U". Alrededor del logo se deja un margen libre de <b>2x</b> por lado: nada de texto, bordes de slide ni otros elementos dentro de esa zona.</p>
+      <p class="note">Referencia práctica: 2x ≈ 11% del ancho del logo.</p>
     </div>
   </div>
 
-  <div class="todo" style="margin-top:20px">HEX exacto del <b>verde salvia claro</b> usado como fondo con líneas onduladas en el feed (tomarlo del brand kit de Canva <code>kAGRLHSzN70</code>). En este documento se usa un tinte provisorio.</div>
+  <h3>Reglas de uso</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Siempre</h4><ul><li>Solo en los colores de la paleta; si no están disponibles, en escala de grises.</li><li>Proporciones originales, con su área segura.</li><li>Sobre fondos lisos o fotos con velo que aseguren lectura.</li></ul></div>
+    <div class="card"><h4>Nunca</h4><ul><li>Recolorear fuera de la paleta, agregar sombras o contornos.</li><li>Deformar, rotar o separar el isotipo de la bajada en la versión completa.</li><li>Usarlo sobre zonas de foto con mucho detalle.</li></ul></div>
+  </div>
+  <div class="todo" style="margin-top:18px">Tamaño mínimo de reproducción (digital e impreso): el manual no lo define.</div>
+  <div class="warn" style="margin-top:12px">El encabezado del manual dice <b>"LUMA CENTRO PEDAGÓGICO"</b>. El nombre correcto es <b>LUMA Centro Psicopedagógico Integral</b> (como figura en el propio logo). Conviene pedirle a la agencia que actualice el manual.</div>
+</section>
 
-  <h3>Combinaciones permitidas</h3>
+<!-- ============ 3. COLOR ============ -->
+<section class="page">
+  <div class="kicker">03 · Color</div>
+  <h2>Paleta <span class="u">oficial</span></h2>
+  <p class="lead">Cuatro colores del manual de marca. El salvia claro y el gris oliva sostienen los fondos; el rosa arena y el taupe acentúan.</p>
+
+  <div class="grid g4 keep2" style="margin-top:26px">
+    <div class="swatch"><div class="chip" style="background:var(--salvia);color:var(--oliva)">Salvia claro</div>
+      <div class="meta"><b>Verde salvia claro</b><code>#AAB9A6</code><br>RGB 170 / 185 / 166<br>CMYK 38 / 18 / 37 / 3<br><br>Fondos claros, portadas suaves, círculo del logo.</div></div>
+    <div class="swatch"><div class="chip" style="background:var(--oliva);color:var(--blanco)">Gris oliva</div>
+      <div class="meta"><b>Gris oliva</b><code>#6C7065</code><br>RGB 108 / 112 / 101<br>CMYK 55 / 40 / 52 / 29<br><br>Fondos oscuros lisos, títulos sobre fondo claro.</div></div>
+    <div class="swatch"><div class="chip" style="background:var(--rosa);color:var(--oliva)">Rosa arena</div>
+      <div class="meta"><b>Rosa arena</b><code>#D9C7BF</code><br>RGB 217 / 199 / 191<br>CMYK 14 / 23 / 23 / 2<br><br>Acento: resaltados y números grandes.</div></div>
+    <div class="swatch"><div class="chip" style="background:var(--taupe);color:var(--blanco)">Taupe</div>
+      <div class="meta"><b>Taupe</b><code>#A19089</code><br>RGB 161 / 144 / 137<br>CMYK 32 / 38 / 38 / 16<br><br>Acento secundario, textos de apoyo.</div></div>
+  </div>
+
+  <h3>Colores de apoyo</h3>
+  <div class="grid g2">
+    <div class="swatch" style="display:flex"><div class="chip" style="background:var(--blanco);width:40%;height:auto;box-shadow:inset -1px 0 0 var(--linea)">Blanco</div><div class="meta"><b>Blanco</b><code>#FFFFFF</code><br>Texto sobre gris oliva, bordes de stickers, etiquetas tipo cinta.</div></div>
+    <div class="swatch" style="display:flex"><div class="chip" style="background:var(--crema) var(--papel);width:40%;height:auto">Crema</div><div class="meta"><b>Crema con textura de papel</b><code>#F6F2EA</code> <span class="note">(provisorio)</span><br>Fondos claros alternativos al salvia.</div></div>
+  </div>
+  <div class="todo" style="margin-top:14px">HEX exacto del crema texturado que se usa en el feed (tomarlo del brand kit de Canva <code>kAGRLHSzN70</code>).</div>
+
+  <h3>Combinaciones y contraste</h3>
   <table>
     <tr><th>Texto / fondo</th><th>Contraste</th><th>Uso</th></tr>
-    <tr><td><span class="pair" style="background:var(--crema);color:var(--oliva);box-shadow:inset 0 0 0 1px var(--linea)">Oliva sobre crema</span></td><td>8,3 : 1</td><td>Todo: títulos, cuerpo, subtítulos.</td></tr>
-    <tr><td><span class="pair" style="background:var(--oliva);color:var(--blanco)">Blanco sobre oliva</span></td><td>9,8 : 1</td><td>Todo, incluido texto de cuerpo.</td></tr>
-    <tr><td><span class="pair" style="background:var(--salvia);color:var(--blanco)">Blanco sobre salvia</span></td><td>3,8 : 1</td><td>Títulos y textos grandes (desde ~40 px en 1080). Cuerpo corto en bold.</td></tr>
-    <tr><td><span class="pair" style="background:var(--salvia);color:var(--crema)">Crema sobre salvia</span></td><td>3,3 : 1</td><td>Solo títulos grandes.</td></tr>
-    <tr><td><span class="pair" style="background:var(--crema);color:var(--salvia);box-shadow:inset 0 0 0 1px var(--linea)">Salvia sobre crema</span></td><td>3,3 : 1</td><td>Subtítulos en mayúscula bold, detalles y líneas. Nunca párrafos.</td></tr>
-    <tr><td><span class="pair" style="background:var(--salvia);color:var(--oliva)">Oliva sobre salvia</span></td><td>2,6 : 1</td><td><b>Evitar.</b> No se lee en el celular.</td></tr>
+    <tr><td><span class="pair" style="background:var(--oliva);color:var(--blanco)">Blanco sobre gris oliva</span></td><td>5,1 : 1</td><td>Todo: títulos y cuerpo. Es la combinación más legible de la paleta.</td></tr>
+    <tr><td><span class="pair" style="background:var(--crema);color:var(--oliva);box-shadow:inset 0 0 0 1px var(--linea)">Gris oliva sobre crema</span></td><td>4,5 : 1</td><td>Todo: títulos y cuerpo.</td></tr>
+    <tr><td><span class="pair" style="background:var(--rosa);color:var(--oliva)">Gris oliva sobre rosa arena</span></td><td>3,1 : 1</td><td>Títulos, etiquetas y cuerpo breve en tamaño grande.</td></tr>
+    <tr><td><span class="pair" style="background:var(--taupe);color:var(--blanco)">Blanco sobre taupe</span></td><td>3,1 : 1</td><td>Títulos y etiquetas. Evitar párrafos.</td></tr>
+    <tr><td><span class="pair" style="background:var(--salvia);color:var(--oliva)">Gris oliva sobre salvia claro</span></td><td>2,5 : 1</td><td>Títulos grandes en Calistoga (desde ~64 px en 1080). Para párrafos sobre salvia, usar cuerpo grande y Medium/SemiBold.</td></tr>
+    <tr><td><span class="pair" style="background:var(--oliva);color:var(--salvia)">Salvia claro sobre gris oliva</span></td><td>2,5 : 1</td><td>Títulos grandes y palabras clave en bold dentro del cuerpo blanco.</td></tr>
+    <tr><td><span class="pair" style="background:var(--salvia);color:var(--blanco)">Blanco sobre salvia claro</span></td><td>2,1 : 1</td><td>Solo logo e isotipo. <b>Evitar texto.</b></td></tr>
   </table>
+  <p class="note" style="margin-top:8px">La paleta es suave por diseño: el contraste se gana con tamaño y peso. Si hiciera falta un tono más oscuro para textos largos, conviene definirlo con la agencia.</p>
 
-  <h3>Proporción sugerida por pieza</h3>
-  <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:700 13px/34px var(--sans);text-align:center">
-    <div style="flex:60;background:var(--crema);box-shadow:inset 0 0 0 1px var(--linea)">Crema 60%</div>
-    <div style="flex:25;background:var(--salvia);color:#fff">Salvia 25%</div>
-    <div style="flex:15;background:var(--oliva);color:var(--crema)">Oliva 15%</div>
-  </div>
-  <p class="note" style="margin-top:8px">Referencia orientativa para el feed en conjunto, no una regla por slide.</p>
+  <div class="warn" style="margin-top:20px"><b>No usar</b> los valores de referencia anteriores (<code>#7A8765</code>, <code>#F4ECD8</code>, <code>#3F4635</code>) ni Cambria/Calibri: eran aproximaciones para documentos. En piezas de marca, <b>el manual manda</b>.</div>
 </section>
 
-<!-- ============ 3. TIPOGRAFÍA ============ -->
+<!-- ============ 4. TIPOGRAFÍA ============ -->
 <section class="page">
-  <div class="kicker">03 · Tipografía</div>
-  <h2>Serif para decir, <span class="u">sans para explicar</span></h2>
-  <p class="lead">Títulos en serif (Cambria o equivalente) y cuerpo en sans (Calibri o equivalente). Equivalentes libres: Caladea y Carlito.</p>
+  <div class="kicker">04 · Tipografía</div>
+  <h2>Calistoga dice, <span class="u">Metropolis explica</span></h2>
+  <p class="lead"><b>Calistoga</b> (Google Fonts) para títulos y <b>Metropolis</b> (libre, Fontsource) para cuerpo y subtítulos. Las dos están en <code>assets/fonts/</code>.</p>
 
-  <div style="margin-top:24px">
-    <div class="type-row">
-      <div class="spec"><b>Título bold</b>Serif bold · tracking −2 a −3% · interlineado 1,05 · 96–120 px en 1080</div>
-      <div style="font:700 48px/1.05 var(--serif);letter-spacing:-.025em">Elegir carrera es un <span class="u">proyecto de vida</span></div>
-    </div>
-    <div class="type-row">
-      <div class="spec"><b>Título combinado</b>Serif cursiva regular + serif bold en la frase clave</div>
-      <div style="font:400 italic 40px/1.1 var(--serif);letter-spacing:-.01em">Tu hijo no sabe<br><span style="font-style:normal;font-weight:700;font-size:1.2em;letter-spacing:-.025em">qué estudiar?</span></div>
-    </div>
-    <div class="type-row">
-      <div class="spec"><b>Número de listado</b>Serif bold muy grande · 280–400 px en 1080</div>
-      <div style="font:700 96px/.9 var(--serif);letter-spacing:-.04em;color:var(--salvia)">3 <span style="font:700 18px/1 var(--sans);letter-spacing:.14em;color:var(--oliva);vertical-align:middle">SEÑALES</span></div>
-    </div>
-    <div class="type-row">
-      <div class="spec"><b>Subtítulo</b>Sans bold mayúscula · tracking +12% · 30–36 px en 1080</div>
-      <div style="font:700 15px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase">Cuando te conocés a vos mismo</div>
-    </div>
-    <div class="type-row">
-      <div class="spec"><b>Cuerpo</b>Sans regular · interlineado 1,35–1,45 · 38–44 px en 1080 · frase clave en <b style="display:inline">bold</b></div>
-      <div style="font:400 19px/1.45 var(--sans)">Conocerte antes de elegir te da <b>claridad</b> para decidir con confianza.</div>
-    </div>
-    <div class="type-row">
-      <div class="spec"><b>Título de reel</b>Sans bold blanco sobreimpreso sobre el video de Juli</div>
-      <div style="background:var(--oliva);color:#fff;font:700 26px/1.15 var(--sans);padding:14px 18px;border-radius:8px">La orientación vocacional</div>
-    </div>
+  <div class="grid g2" style="margin-top:24px">
+    <div class="card" style="background:var(--oliva);color:var(--blanco)"><div style="font:400 64px/1 var(--display)">Calistoga</div><p style="font:400 28px/1.2 var(--display);margin:14px 0 0">Aa Bb Cc Ññ ¿? 1234567890</p></div>
+    <div class="card"><div style="font:500 52px/1.1 var(--sans)">Metropolis</div><p style="font:300 18px/1.5 var(--sans);margin:12px 0 0">Light · <span style="font-weight:400">Regular</span> · <span style="font-weight:500">Medium</span> · <span style="font-weight:600">SemiBold</span> · <span style="font-weight:700">Bold</span></p></div>
+  </div>
+
+  <h3>Jerarquías (medidas para 1080 px de ancho)</h3>
+  <div>
+    <div class="type-row"><div class="spec"><b>Título</b>Calistoga · 88–120 px · interlineado 1,0–1,05</div>
+      <div style="font:400 46px/1.04 var(--display)">Lo que elige tu hijo/a es su <span class="u">proyecto de vida</span></div></div>
+    <div class="type-row"><div class="spec"><b>Título combinado</b>Metropolis Light (contexto) + Calistoga (parte clave)</div>
+      <div style="color:var(--oliva)"><span style="font:300 italic 32px/1.1 var(--sans);display:block">Tu hijo no sabe</span><span style="font:400 54px/1 var(--display)">qué estudiar?</span></div></div>
+    <div class="type-row"><div class="spec"><b>Mezcla de pesos en línea</b>Metropolis Light + Calistoga en la misma frase</div>
+      <div style="font:300 30px/1.2 var(--sans)">El uso de la <span style="font:400 1.1em/1 var(--display)">inteligencia artificial</span> para tareas escolares</div></div>
+    <div class="type-row"><div class="spec"><b>Número de listado</b>Calistoga · 280–400 px · rosa arena</div>
+      <div style="display:flex;align-items:center;gap:16px"><span style="font:400 110px/.9 var(--display);color:var(--rosa);-webkit-text-stroke:1px var(--taupe)">3</span><span style="font:600 18px/1 var(--sans);letter-spacing:.16em">TIPS</span></div></div>
+    <div class="type-row"><div class="spec"><b>Subtítulo</b>Metropolis SemiBold · mayúsculas · tracking +14% · 30–36 px</div>
+      <div style="font:600 15px/1.3 var(--sans);letter-spacing:.16em">CUANDO TE CONOCÉS A VOS MISMO</div></div>
+    <div class="type-row"><div class="spec"><b>Cuerpo</b>Metropolis Regular · 38–44 px · interlineado 1,35 · palabra clave en SemiBold/Bold</div>
+      <div style="font:400 19px/1.45 var(--sans)">Un proceso de <b>autoconocimiento</b> que ayuda a entender tus <b>fortalezas</b> y tu historia.</div></div>
+    <div class="type-row"><div class="spec"><b>Título de reel</b>Metropolis Bold blanco sobre el video de Juli</div>
+      <div style="background:var(--oliva);color:#fff;font:700 24px/1.15 var(--sans);padding:14px 18px;border-radius:8px">La orientación vocacional</div></div>
   </div>
 
   <h3>Reglas de énfasis</h3>
   <ul>
-    <li><b>Una sola</b> frase clave subrayada por título. El subrayado acompaña el color del texto, con grosor ~8% del cuerpo y separación generosa.</li>
-    <li>O subrayado, o combinación cursiva + bold. No las dos en el mismo título.</li>
-    <li>En el cuerpo, la frase clave va en <b>bold</b> (máximo dos por slide).</li>
-    <li>Sin mayúsculas sostenidas en títulos: la mayúscula queda para subtítulos sans.</li>
+    <li><b>Una sola</b> frase clave por título: subrayada, o en Calistoga dentro de un título combinado. No las dos a la vez.</li>
+    <li>En el cuerpo, palabras clave en SemiBold/Bold (máximo dos o tres por slide); sobre gris oliva pueden ir en salvia claro.</li>
+    <li>Mayúsculas sostenidas solo en subtítulos y pastillas de Metropolis.</li>
   </ul>
 </section>
 
-<!-- ============ 4. COMPOSICIÓN ============ -->
+<!-- ============ 5. RECURSOS GRÁFICOS ============ -->
 <section class="page">
-  <div class="kicker">04 · Composición</div>
-  <h2>Sistema visual <span class="u">del feed</span></h2>
-  <p class="lead">Tres fondos que se alternan a lo largo del carrusel y del feed. Ninguna slide repite el fondo de la anterior.</p>
+  <div class="kicker">05 · Recursos gráficos</div>
+  <h2>Catálogo <span class="u">del feed</span></h2>
+  <p class="lead">Los recursos que ya forman parte del lenguaje visual de LUMA, con un ejemplo de cada uno. Usar uno o dos por slide.</p>
 
-  <div class="slides" style="margin-top:28px">
+  <div class="grid g3" style="margin-top:26px">
+    <div class="res"><div class="demo" style="background:var(--salvia) var(--papel)"><svg class="waves-demo"><use href="#waves"/></svg></div>
+      <div class="txt"><b>Líneas onduladas finas</b>Sobre salvia claro o crema, en la mitad inferior. Base para apoyar recortes.</div></div>
+
+    <div class="res"><div class="demo" style="background:var(--salvia) var(--papel)"><svg class="waves-demo"><use href="#waves"/></svg><div class="sticker"></div></div>
+      <div class="txt"><b>Recorte tipo sticker</b>Personas reales recortadas con borde blanco grueso y sombra suave, apoyadas sobre las líneas.</div></div>
+
+    <div class="res"><div class="demo"><div class="ph"></div><div class="veil"></div><div style="position:relative;color:#fff;font:400 9cqw/1.05 var(--display);padding:0 8cqw;align-self:flex-end;margin-bottom:10cqw;width:100%">Foto con velo</div></div>
+      <div class="txt"><b>Foto a sangre con velo</b>Foto real a sangre con un velo de gris oliva hacia la zona del texto.</div></div>
+
+    <div class="res"><div class="demo"><div style="font:400 10cqw/1.1 var(--display);color:var(--oliva);text-align:center">¿qué <span class="u">carrera</span><br><span class="u">elegir?</span></div></div>
+      <div class="txt"><b>Subrayado de frase clave</b>La palabra o frase central del título, subrayada en el mismo color del texto.</div></div>
+
+    <div class="res"><div class="demo" style="background:var(--oliva) var(--papel)"><div style="color:var(--salvia);padding:0 8cqw;width:100%"><span style="font:300 italic 7cqw/1.1 var(--sans);display:block;color:#fff">Tu hijo no sabe</span><span style="font:400 13cqw/1 var(--display)">qué estudiar?</span></div></div>
+      <div class="txt"><b>Título combinado</b>Sans liviana para el contexto y Calistoga para la parte clave.</div></div>
+
+    <div class="res"><div class="demo"><div style="display:flex;align-items:center;gap:4cqw"><span style="font:400 40cqw/.8 var(--display);color:var(--rosa);-webkit-text-stroke:.3cqw var(--taupe)">3</span><span style="font:600 6cqw/1 var(--sans);letter-spacing:.16em;color:var(--oliva)">TIPS</span></div></div>
+      <div class="txt"><b>Número grande</b>Calistoga en rosa arena para piezas de listado.</div></div>
+
+    <div class="res"><div class="demo" style="background:var(--salvia) var(--papel);flex-direction:column;gap:2.4cqw"><span class="tape" style="transform:rotate(-3deg)">¿qué querés</span><span class="tape" style="transform:rotate(2deg);margin-left:12cqw">estudiar?</span></div>
+      <div class="txt"><b>Etiquetas tipo cinta</b>Palabras sobre papel blanco recortado, levemente giradas.</div></div>
+
+    <div class="res"><div class="demo"><div style="font:300 7cqw/1.3 var(--sans);color:var(--oliva);text-align:center;padding:0 8cqw">Hoy <span class="hl" style="font-family:var(--display);font-weight:400">celebramos</span> a quienes enseñan</div></div>
+      <div class="txt"><b>Resaltador rosa</b>Trazo de rosa arena detrás de una sola palabra.</div></div>
+
+    <div class="res"><div class="demo" style="color:var(--oliva)"><div style="position:relative;font:400 8cqw/1.1 var(--display)">Mirá esto<svg style="position:absolute;width:30cqw;height:20cqw;right:-28cqw;top:-14cqw"><use href="#arrow"/></svg><svg style="position:absolute;left:0;bottom:-6cqw;width:100%;height:6cqw;color:var(--taupe)"><use href="#scribble"/></svg></div></div>
+      <div class="txt"><b>Garabatos y flechas a mano</b>Trazos simples que señalan o subrayan. Uno por slide.</div></div>
+
+    <div class="res"><div class="demo" style="background:var(--salvia) var(--papel)"><div class="notebook">Mis intereses:<br>leer, armar cosas,<br>escuchar a otros…</div></div>
+      <div class="txt"><b>Hoja de cuaderno</b>Rayada, con margen rosa, para listas y preguntas.</div></div>
+
+    <div class="res"><div class="demo"><div class="boxed"><span class="pill">5 HÁBITOS</span>Rutinas que ordenan la semana de estudio</div></div>
+      <div class="txt"><b>Recuadro con pastilla</b>Bordes redondeados y título en pastilla gris oliva.</div></div>
+
+    <div class="res"><div class="demo" style="background:var(--salvia) var(--papel);color:var(--oliva)"><div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i></div><div style="display:flex;gap:4cqw;align-items:center;padding:0 8cqw"><div class="face"></div><div style="font:400 5.4cqw/1.35 var(--sans)">Foto circular junto al texto</div></div><div style="position:absolute;bottom:10%;left:0;right:0;text-align:center"><span class="btn">¿Tenés dudas? Escribinos</span></div></div>
+      <div class="txt"><b>Avatar, indicador y botón</b>Foto circular, puntos de paginación arriba a la derecha y botón en gris oliva con Calistoga.</div></div>
+  </div>
+</section>
+
+<!-- ============ 6. COMPOSICIÓN ============ -->
+<section class="page">
+  <div class="kicker">06 · Composición</div>
+  <h2>Tres fondos <span class="u">que se alternan</span></h2>
+  <p class="lead">Salvia claro o crema texturado con líneas onduladas, gris oliva liso y foto real a sangre con velo. Ninguna slide repite el fondo de la anterior.</p>
+
+  <div class="slides" style="margin-top:26px">
     <div>
       <div class="slide claro">
-        <svg class="waves" style="color:var(--salvia);opacity:.7"><use href="#waves"/></svg>
-        <div class="t" style="position:relative">Elegir es un <span class="u">proceso</span></div>
-        <div class="s" style="position:relative;color:var(--salvia)">Subtítulo en sans</div>
-        <div class="sticker">Recorte con borde blanco</div>
+        <div class="dots" style="color:var(--oliva)"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+        <svg class="waves-demo" style="inset:52% 0 0 0"><use href="#waves"/></svg>
+        <div class="t" style="position:relative;margin-top:12%">Elegir es un <span class="u">proceso</span></div>
+        <div class="s" style="position:relative">Subtítulo en Metropolis</div>
+        <div class="sticker" style="position:absolute;right:9%;bottom:6%;width:40%"></div>
       </div>
-      <p class="caption"><b>A · Claro con líneas onduladas.</b> Título en oliva. Recorte tipo sticker apoyado sobre las líneas.</p>
+      <p class="caption"><b>A · Claro texturado.</b> Títulos en gris oliva. Líneas onduladas y recorte tipo sticker.</p>
     </div>
     <div>
-      <div class="slide oliva">
-        <div class="t">Una idea por <span class="u">slide</span></div>
-        <div class="b">Cuerpo breve en sans, con la <b>frase clave en bold</b>.</div>
-        <div class="brand">LUMA</div>
+      <div class="slide oscuro">
+        <div class="dots"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="t" style="margin-top:22%"><span class="light">Una idea</span>por slide</div>
+        <div class="b">Cuerpo en Metropolis, con la <b>palabra clave</b> en salvia claro.</div>
       </div>
-      <p class="caption"><b>B · Salvia/oliva liso.</b> Texto en blanco o crema. Ideal para el gancho conceptual o el cierre.</p>
+      <p class="caption"><b>B · Gris oliva liso.</b> Texto en blanco y acentos en salvia claro. Ideal para gancho o cierre.</p>
     </div>
     <div>
       <div class="slide foto">
-        <div class="ph">Foto real a sangre</div>
-        <div class="content">
-          <div class="t" style="font-size:9.5cqw">Foto con <span class="u">fade</span> a crema</div>
-          <div class="s" style="color:var(--salvia)">Texto sobre la zona lisa</div>
-        </div>
+        <div class="ph"></div><div class="veil"></div>
+        <div class="dots" style="color:#fff"><i></i><i></i><i class="on"></i><i></i><i></i></div>
+        <div class="t" style="font-size:9.5cqw">Foto con <span class="u">velo</span></div>
+        <div class="s">Texto sobre la zona velada</div>
       </div>
-      <p class="caption"><b>C · Foto real.</b> Degradado suave hacia crema; el texto va siempre sobre la parte lisa.</p>
+      <p class="caption"><b>C · Foto a sangre.</b> Velo de gris oliva para asegurar la lectura en blanco.</p>
     </div>
-  </div>
-
-  <h3>Recursos gráficos</h3>
-  <div class="grid g2">
-    <div class="card"><h4>Líneas onduladas</h4><p>Finas (2–3 px en 1080), en salvia, 5 a 8 líneas paralelas en la mitad inferior del fondo claro. Base para apoyar recortes.</p></div>
-    <div class="card"><h4>Recortes tipo sticker</h4><p>Personas reales (adolescentes, familia) recortadas con borde blanco de 16–24 px y sombra muy suave. Un recorte por slide.</p></div>
-    <div class="card"><h4>Foto con fade</h4><p>Foto suave, luz natural. Degradado a crema en el último 30–40% de la imagen. Nunca texto sobre zonas con detalle.</p></div>
-    <div class="card"><h4>Emoji</h4><p>Solo 🌿, como mucho uno por pieza, y preferentemente en el caption.</p></div>
   </div>
 
   <h3>Zonas seguras y márgenes</h3>
@@ -424,7 +462,7 @@
         <div class="zone grid-crop"></div>
         <div class="zone live" style="inset:8.9cqw 7.4cqw 8.9cqw">Zona de texto<br>920 × 1110 px</div>
       </div>
-      <p class="caption"><b>Carrusel 1080 × 1350.</b> Márgenes de 80 px a los lados y 96 px arriba y abajo. La línea punteada marca el recorte 3:4 de la grilla del perfil (≈ 40 px por lado): en la portada, el título queda dentro de ella.</p>
+      <p class="caption"><b>Carrusel 1080 × 1350.</b> Márgenes de 80 px a los lados y 96 px arriba y abajo. La línea punteada marca el recorte 3:4 de la grilla del perfil (≈ 40 px por lado): en la portada, el título queda dentro.</p>
     </div>
     <div>
       <div class="safe reel">
@@ -436,12 +474,18 @@
       <p class="caption"><b>Reel 1080 × 1920.</b> Evitar texto en los 220 px superiores, los 420 px inferiores y la franja derecha de íconos. Para la portada del reel en la grilla, mantener el título en el centro 1080 × 1350.</p>
     </div>
   </div>
-  <p class="note" style="margin-top:12px">Las medidas de interfaz de Instagram son de referencia y pueden cambiar con actualizaciones de la app: verificar en una vista previa antes de publicar.</p>
+  <p class="note" style="margin-top:12px">Las medidas de interfaz de Instagram son de referencia y cambian con las actualizaciones de la app: verificar en una vista previa antes de publicar.</p>
+
+  <h3>Reglas rápidas</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Foto</h4><p>Personas reales, luz natural. El texto va siempre sobre la zona velada o lisa, nunca sobre caras ni detalle.</p></div>
+    <div class="card"><h4>Negritas y emoji</h4><p>Bold solo en palabras clave. Emoji: solo 🌿, como mucho uno por pieza, preferentemente en el caption.</p></div>
+  </div>
 </section>
 
-<!-- ============ 5. VOZ ============ -->
+<!-- ============ 7. VOZ ============ -->
 <section class="page">
-  <div class="kicker">05 · Voz y tono</div>
+  <div class="kicker">07 · Voz y tono</div>
   <h2>Cálida, directa <span class="u">y afirmativa</span></h2>
   <p class="lead">Conversacional, concisa, cálida pero directa. Rigor psicopedagógico traducido a lenguaje accesible, sin simplificar de más.</p>
 
@@ -453,12 +497,12 @@
 
   <h3>Palabras y frases prohibidas</h3>
   <table>
-    <tr><th style="width:38%">Evitar</th><th>Usar en su lugar</th></tr>
+    <tr><th style="width:40%">Evitar</th><th>Usar en su lugar</th></tr>
     <tr><td class="strike">trabajamos</td><td>acompañamos · orientamos en función de</td></tr>
     <tr><td class="strike">entorno</td><td>contexto · familia · escuela (lo concreto)</td></tr>
     <tr><td class="strike">trabajé con…</td><td>acompaño a… (siempre en presente)</td></tr>
     <tr><td class="strike">qué te mueve / lo que te mueve</td><td>conocerte · saber quién sos</td></tr>
-    <tr><td class="strike">rechaza · lenguaje clínico duro</td><td>le cuesta · todavía está buscando · describir la situación con palabras cotidianas</td></tr>
+    <tr><td class="strike">rechaza · lenguaje clínico duro</td><td>le cuesta · todavía está buscando · palabras cotidianas</td></tr>
     <tr><td class="strike">no hay nada mal en vos · no es un fracaso</td><td>Nombrar lo esperable en afirmativo: "Es parte de esta etapa"</td></tr>
     <tr><td class="strike">Reservá tu primera sesión · cantidad de sesiones · 100% virtual (en campaña)</td><td>"¿Tenés dudas? Escribinos"</td></tr>
     <tr><td class="strike">LUMA nació de la orientación vocacional · Juli trabaja solo en LUMA</td><td>LUMA como centro psicopedagógico integral; Juli como psicopedagoga que ejerce en todo el ciclo vital</td></tr>
@@ -467,93 +511,63 @@
   </table>
 
   <h3>Así sí / así no</h3>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>Trabajamos la orientación vocacional con tu hijo.</div>
-    <div class="si"><span class="tag">Así sí</span>Acompañamos a tu hijo/a a conocerse para elegir con confianza.</div>
-  </div>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>Descubrí qué te mueve.</div>
-    <div class="si"><span class="tag">Así sí</span>Conocerte es el primer paso para saber hacia dónde querés ir.</div>
-  </div>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>No saber qué estudiar no es un fracaso.</div>
-    <div class="si"><span class="tag">Así sí</span>Llegar a esta etapa con preguntas es parte del proceso.</div>
-  </div>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>Reservá tu primera sesión: 4 encuentros 100% virtuales.</div>
-    <div class="si"><span class="tag">Así sí</span>¿Tenés dudas sobre cómo acompañar su elección? Escribinos.</div>
-  </div>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>Tu hijo rechaza estudiar y el entorno lo presiona.</div>
-    <div class="si"><span class="tag">Así sí</span>Cuando a tu hijo/a le cuesta decidir, conocerse le da claridad.</div>
-  </div>
-  <div class="do-dont">
-    <div class="no"><span class="tag">Así no</span>Durante años trabajé con adolescentes en LUMA.</div>
-    <div class="si"><span class="tag">Así sí</span>Acompaño a adolescentes y familias en la construcción de su proyecto de vida.</div>
-  </div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>Trabajamos la orientación vocacional con tu hijo.</div><div class="si"><span class="tag">Así sí</span>Acompañamos a tu hijo/a a conocerse para elegir con confianza.</div></div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>Descubrí qué te mueve.</div><div class="si"><span class="tag">Así sí</span>Conocerte es el primer paso para saber hacia dónde querés ir.</div></div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>No saber qué estudiar no es un fracaso.</div><div class="si"><span class="tag">Así sí</span>Llegar a esta etapa con preguntas es parte del proceso.</div></div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>Reservá su primera sesión: un programa de 4 sesiones.</div><div class="si"><span class="tag">Así sí</span>¿Tenés dudas sobre cómo acompañar su elección? Escribinos.</div></div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>Tu hijo rechaza estudiar y el entorno lo presiona.</div><div class="si"><span class="tag">Así sí</span>Cuando a tu hijo/a le cuesta decidir, conocerse le da claridad.</div></div>
+  <div class="do-dont"><div class="no"><span class="tag">Así no</span>Durante años trabajé con adolescentes en LUMA.</div><div class="si"><span class="tag">Así sí</span>Acompaño a adolescentes y familias en la construcción de su proyecto de vida.</div></div>
 </section>
 
-<!-- ============ 6. ESTRUCTURA Y CTA ============ -->
+<!-- ============ 8. CARRUSEL Y CTA ============ -->
 <section class="page">
-  <div class="kicker">06 · Carrusel y CTA</div>
+  <div class="kicker">08 · Carrusel y CTA</div>
   <h2>Cinco slides, <span class="u">cinco ideas</span></h2>
   <p class="lead">Máximo 5 slides. Cada slide aporta una idea distinta: nunca el mismo concepto dicho con otras palabras.</p>
 
   <div class="steps" style="margin-top:24px">
-    <div class="step"><b>Portada</b>Hook en positivo. Título serif con la frase clave subrayada.</div>
+    <div class="step"><b>Portada</b>Hook en positivo. Título en Calistoga con la frase clave subrayada.</div>
     <div class="step"><b>Gancho conceptual</b>La idea que reencuadra el tema.</div>
     <div class="step"><b>Desarrollo</b>Lo concreto: ejemplos, preguntas, pasos.</div>
     <div class="step"><b>Desarrollo</b>Una segunda idea nueva, o la consecuencia de la anterior.</div>
-    <div class="step"><b>Cierre + CTA</b>LUMA y la invitación, desde la necesidad.</div>
+    <div class="step"><b>Cierre + CTA</b>Logo LUMA y la invitación, desde la necesidad.</div>
   </div>
-  <p class="note" style="margin-top:10px">Fondos sugeridos: alternar A · B · C (claro, liso, foto) sin repetir fondo en slides consecutivas.</p>
+  <p class="note" style="margin-top:10px">Fondos: alternar claro, gris oliva y foto, sin repetir en slides consecutivas.</p>
 
   <h3>Fórmulas de CTA</h3>
   <div class="grid g2">
-    <div class="card">
-      <h4>Para familias · conversación</h4>
-      <ul>
-        <li>¿Tenés dudas? Escribinos.</li>
-        <li>¿Querés saber cómo acompañar su elección? Escribinos.</li>
-        <li>Contanos qué está pensando tu hijo/a. Te leemos.</li>
-      </ul>
-      <p class="note">Fórmula: pregunta desde la necesidad + verbo de contacto.</p>
-    </div>
-    <div class="card">
-      <h4>Para adolescentes · compartir</h4>
-      <ul>
-        <li>Mandáselo a alguien que lo está pensando.</li>
-        <li>Guardalo para cuando llegue la inscripción.</li>
-        <li>Compartilo con quien está por elegir.</li>
-      </ul>
-      <p class="note">Fórmula: verbo de compartir/guardar + a quién le sirve.</p>
-    </div>
+    <div class="card"><h4>Para familias · conversación</h4>
+      <ul><li>¿Tenés dudas? Escribinos.</li><li>¿Querés saber cómo acompañar su elección? Escribinos.</li><li>Contanos qué está pensando tu hijo/a. Te leemos.</li></ul>
+      <p class="note">Fórmula: pregunta desde la necesidad + verbo de contacto.</p></div>
+    <div class="card"><h4>Para adolescentes · compartir</h4>
+      <ul><li>Mandáselo a alguien que lo está pensando.</li><li>Guardalo para cuando llegue la inscripción.</li><li>Compartilo con quien está por elegir.</li></ul>
+      <p class="note">Fórmula: verbo de compartir/guardar + a quién le sirve.</p></div>
   </div>
 
   <h3>Checklist antes de publicar</h3>
-  <div class="card">
-    <ul>
-      <li>Ninguna palabra de la lista prohibida.</li>
-      <li>Hook y CTA en lenguaje afirmativo, sin "no" ni "sin".</li>
-      <li>Cada slide aporta una idea distinta.</li>
-      <li>Voseo (AR) o tuteo (LATAM / Miami), sin mezclar.</li>
-      <li>Una sola frase subrayada por título; bold solo en frases clave.</li>
-      <li>Emoji: solo 🌿, como máximo uno.</li>
-      <li>Texto dentro de la zona segura; portada dentro del recorte 3:4.</li>
-      <li>Nombre completo: LUMA Centro Psicopedagógico Integral.</li>
-    </ul>
-  </div>
+  <div class="card"><ul>
+    <li>Ninguna palabra de la lista prohibida.</li>
+    <li>Hook y CTA en lenguaje afirmativo, sin "no" ni "sin".</li>
+    <li>Cada slide aporta una idea distinta.</li>
+    <li>Voseo (AR) o tuteo (LATAM / Miami), sin mezclar. Tildes del voseo: querés, sabés, tenés.</li>
+    <li>Solo colores de la paleta oficial; Calistoga + Metropolis.</li>
+    <li>Una sola frase clave destacada por título.</li>
+    <li>Emoji: solo 🌿, como máximo uno.</li>
+    <li>Texto dentro de la zona segura; portada dentro del recorte 3:4; logo con su área segura.</li>
+    <li>Nombre completo: LUMA Centro Psicopedagógico Integral.</li>
+  </ul></div>
 
   <h3>Pendientes de marca</h3>
   <div class="grid g2">
-    <div class="todo">Archivo del logo (isotipo + "LUMA" en blanco sobre círculo salvia) y sus versiones.</div>
-    <div class="todo">HEX del verde salvia claro de fondo.</div>
-    <div class="todo">Usuario de Instagram y datos de contacto para el cierre.</div>
+    <div class="todo">HEX del crema con textura de papel.</div>
+    <div class="todo">Tamaño mínimo del logo (digital e impreso).</div>
+    <div class="todo">Usuario de Instagram y datos de contacto para cierres.</div>
     <div class="todo">Slogan o frase de marca, si se define.</div>
+    <div class="todo">Actualizar el encabezado del manual con el nombre correcto.</div>
   </div>
 </section>
 
-<div class="footer">LUMA Centro Psicopedagógico Integral · Brand book v1 · Canva brand kit <code>kAGRLHSzN70</code></div>
+<div class="footer">LUMA Centro Psicopedagógico Integral · Brand book v2 · Fuente: Manual de marca (@chabon.mkt, marzo 2026) · Canva brand kit <code>kAGRLHSzN70</code></div>
 
 </body>
 </html>
