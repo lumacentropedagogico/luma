@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMA · Brand book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Caladea y Carlito son equivalentes métricos libres de Cambria y Calibri -->
+<link href="https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Carlito:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --salvia: #7A8765;
+    --crema: #F4ECD8;
+    --oliva: #3F4635;
+    --blanco: #FFFFFF;
+    --salvia-suave: #E6E4CF; /* tinte de trabajo solo para este documento; HEX oficial a definir */
+    --serif: Cambria, Caladea, Georgia, "Times New Roman", serif;
+    --sans: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    --linea: rgba(63, 70, 53, .18);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    background: var(--crema);
+    color: var(--oliva);
+    font: 17px/1.55 var(--sans);
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 72px 48px;
+    border-bottom: 1px solid var(--linea);
+    position: relative;
+  }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: -.02em; line-height: 1.1; margin: 0; }
+  h2 { font-size: 44px; margin-bottom: 8px; }
+  h3 { font-size: 24px; margin: 36px 0 12px; }
+  p { margin: 0 0 12px; }
+  .kicker {
+    font: 700 13px/1 var(--sans);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--salvia);
+    margin-bottom: 14px;
+  }
+  .lead { font-size: 19px; max-width: 680px; margin-top: 14px; }
+  .u { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
+  .grid { display: grid; gap: 20px; }
+  .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .card {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 22px 24px;
+  }
+  .card h4 { font: 700 20px/1.2 var(--serif); margin: 0 0 8px; }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+  ul { padding-left: 20px; margin: 0 0 12px; }
+  li { margin-bottom: 4px; }
+  .todo {
+    border: 2px dashed var(--salvia);
+    border-radius: 12px;
+    padding: 14px 18px;
+    background: rgba(122, 135, 101, .08);
+    font-size: 15px;
+  }
+  .todo::before {
+    content: "A COMPLETAR";
+    display: block;
+    font: 700 11px/1 var(--sans);
+    letter-spacing: .14em;
+    color: var(--salvia);
+    margin-bottom: 6px;
+  }
+  .note { font-size: 14px; opacity: .8; }
+
+  /* Portada */
+  .cover {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .cover .waves { position: absolute; inset: auto 0 0 0; height: 46%; }
+  .cover h1 { font-size: clamp(56px, 10vw, 104px); }
+  .cover h1 em { font-weight: 400; display: block; font-size: .55em; letter-spacing: -.01em; }
+  .cover .sub { font: 700 14px/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; margin-top: 22px; }
+  .cover .logo-slot { width: 112px; height: 112px; border-radius: 50%; margin-bottom: 36px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 12px; line-height: 1.2; padding: 12px; }
+
+  /* Paleta */
+  .swatch { border-radius: 14px; overflow: hidden; background: var(--blanco); }
+  .swatch .chip { height: 140px; display: flex; align-items: flex-end; padding: 16px; font: 700 26px/1 var(--serif); }
+  .swatch .meta { padding: 16px 18px; font-size: 15px; }
+  .swatch .meta b { display: block; font-size: 17px; }
+  .swatch code { font: 700 15px/1 ui-monospace, Menlo, Consolas, monospace; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; background: var(--blanco); border-radius: 14px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+  th { font: 700 12px/1.2 var(--sans); letter-spacing: .1em; text-transform: uppercase; background: var(--oliva); color: var(--crema); }
+  tr:last-child td { border-bottom: 0; }
+  .pair { display: inline-block; padding: 4px 10px; border-radius: 6px; font-weight: 700; font-family: var(--serif); }
+
+  /* Tipografía */
+  .type-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--linea); align-items: baseline; }
+  .type-row:last-child { border-bottom: 0; }
+  .type-row .spec { font-size: 13px; line-height: 1.4; opacity: .85; }
+  .type-row .spec b { display: block; font-size: 14px; opacity: 1; }
+
+  /* Mini slides */
+  .slides { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .slide {
+    aspect-ratio: 4 / 5;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding: 9% 7.4%;
+    display: flex;
+    flex-direction: column;
+    container-type: inline-size;
+  }
+  .slide .t { font: 700 11cqw/1.05 var(--serif); letter-spacing: -.025em; }
+  .slide .t em { font-weight: 400; }
+  .slide .s { font: 700 3.6cqw/1.3 var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-top: 4cqw; }
+  .slide .b { font: 400 4.6cqw/1.4 var(--sans); margin-top: 4cqw; }
+  .slide .num { font: 700 34cqw/.9 var(--serif); letter-spacing: -.04em; }
+  .slide.claro { background: var(--salvia-suave); color: var(--oliva); }
+  .slide.oliva { background: var(--salvia); color: var(--blanco); }
+  .slide.foto { color: var(--oliva); background: var(--crema); }
+  .slide.foto .ph {
+    position: absolute; inset: 0 0 38% 0;
+    background:
+      repeating-linear-gradient(135deg, rgba(63,70,53,.10) 0 12px, rgba(63,70,53,.04) 12px 24px),
+      #CFC9B2;
+    display: flex; align-items: center; justify-content: center;
+    font: 700 3.4cqw/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--oliva); text-align: center;
+  }
+  .slide.foto .ph::after { content: ""; position: absolute; inset: 55% 0 0 0; background: linear-gradient(to bottom, rgba(244,236,216,0), var(--crema)); }
+  .slide.foto .content { margin-top: auto; position: relative; }
+  .slide .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 48%; }
+  .slide .sticker {
+    position: absolute; right: 9%; bottom: 7%; width: 40%; aspect-ratio: 3 / 4;
+    background: #CFC9B2; border: 2.4cqw solid var(--blanco); border-radius: 46% 46% 10% 10%;
+    box-shadow: 0 1.4cqw 3cqw rgba(63,70,53,.18);
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    font: 700 3cqw/1.25 var(--sans); letter-spacing: .08em; text-transform: uppercase; padding: 6%;
+  }
+  .slide .brand { position: absolute; left: 7.4%; bottom: 5.5%; font: 700 3.4cqw/1 var(--sans); letter-spacing: .14em; }
+  .caption { font-size: 14px; margin-top: 8px; }
+
+  /* Zonas seguras */
+  .safe-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+  .safe { position: relative; background: var(--blanco); border-radius: 8px; overflow: hidden; container-type: inline-size; }
+  .safe.post { aspect-ratio: 1080 / 1350; }
+  .safe.reel { aspect-ratio: 1080 / 1920; max-width: 74%; }
+  .safe .zone { position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; font: 700 3.6cqw/1.25 var(--sans); padding: 4px; }
+  .safe .margin { inset: 0; border: solid rgba(122,135,101,.25); }
+  .safe .grid-crop { top: 0; bottom: 0; left: 3.7%; right: 3.7%; border-left: 2px dashed var(--oliva); border-right: 2px dashed var(--oliva); }
+  .safe .live { border: 2px solid var(--salvia); background: rgba(122,135,101,.10); }
+  .safe .danger { background: rgba(63,70,53,.14); color: var(--oliva); }
+
+  /* Voz */
+  .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: 14px; overflow: hidden; background: var(--blanco); margin-bottom: 14px; }
+  .do-dont > div { padding: 16px 20px; font-size: 16px; }
+  .do-dont .no { border-right: 1px solid var(--linea); color: rgba(63,70,53,.75); }
+  .do-dont .si { background: rgba(122,135,101,.10); }
+  .do-dont .tag { display: block; font: 700 11px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+  .do-dont .no .tag { color: rgba(63,70,53,.6); }
+  .do-dont .si .tag { color: var(--salvia); }
+  .do-dont .why { grid-column: 1 / -1; border-top: 1px solid var(--linea); font-size: 14px; padding: 10px 20px; }
+  .strike { text-decoration: line-through; text-decoration-color: rgba(63,70,53,.45); }
+
+  /* Estructura */
+  .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; counter-reset: s; }
+  .step { background: var(--blanco); border-radius: 12px; padding: 16px; font-size: 14px; }
+  .step::before { counter-increment: s; content: counter(s); display: block; font: 700 40px/1 var(--serif); color: var(--salvia); margin-bottom: 8px; }
+  .step b { display: block; font: 700 16px/1.2 var(--serif); margin-bottom: 6px; }
+
+  .footer { text-align: center; font-size: 13px; padding: 40px 24px 56px; opacity: .75; }
+
+  @media screen and (max-width: 760px) {
+    body { font-size: 16px; }
+    .page { padding: 48px 16px; }
+    h2 { font-size: 34px; }
+    .g2, .g3, .safe-wrap, .do-dont { grid-template-columns: 1fr; }
+    .do-dont .no { border-right: 0; border-bottom: 1px solid var(--linea); }
+    .slides { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .type-row { grid-template-columns: 1fr; gap: 6px; }
+    .safe.reel { max-width: 100%; }
+  }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { font-size: 12.5px; }
+    .page { padding: 14mm; border: 0; break-after: page; max-width: none; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .page:last-of-type { break-after: auto; }
+    .cover { min-height: 297mm; }
+    h2 { font-size: 32px; }
+    .card, .swatch, .slide, .do-dont, .step, table, .type-row, .safe, .safe-wrap > div, .todo { break-inside: avoid; }
+    h2, h3 { break-after: avoid; page-break-after: avoid; }
+    .footer { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Líneas onduladas finas: recurso gráfico del fondo claro -->
+    <symbol id="waves" viewBox="0 0 400 200" preserveAspectRatio="none">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+        <path d="M0 40 C 60 10, 120 70, 200 40 S 340 10, 400 40"/>
+        <path d="M0 62 C 60 32, 120 92, 200 62 S 340 32, 400 62"/>
+        <path d="M0 84 C 60 54, 120 114, 200 84 S 340 54, 400 84"/>
+        <path d="M0 106 C 60 76, 120 136, 200 106 S 340 76, 400 106"/>
+        <path d="M0 128 C 60 98, 120 158, 200 128 S 340 98, 400 128"/>
+        <path d="M0 150 C 60 120, 120 180, 200 150 S 340 120, 400 150"/>
+        <path d="M0 172 C 60 142, 120 202, 200 172 S 340 142, 400 172"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ PORTADA ============ -->
+<section class="page cover">
+  <svg class="waves" style="color: var(--salvia); opacity:.55"><use href="#waves"/></svg>
+  <div style="position:relative">
+    <div class="logo-slot" style="border:2px dashed var(--salvia);background:rgba(122,135,101,.08);color:var(--salvia);font-weight:700;letter-spacing:.08em">LOGO<br>A COMPLETAR</div>
+    <div class="kicker">Brand book · v1 · octubre 2026</div>
+    <h1>LUMA<em>Centro Psicopedagógico Integral</em></h1>
+    <div class="sub">Identidad visual, voz y reglas de contenido</div>
+  </div>
+</section>
+
+<!-- ============ 1. ESENCIA ============ -->
+<section class="page">
+  <div class="kicker">01 · Esencia de marca</div>
+  <h2>Quiénes somos y <span class="u">a quién le hablamos</span></h2>
+  <p class="lead">LUMA es un centro psicopedagógico integral dirigido por la Lic. Julieta Gárate (Juli), que acompaña procesos de aprendizaje y de elección en todo el ciclo vital.</p>
+
+  <div class="grid g2" style="margin-top:28px">
+    <div class="card">
+      <h4>Propósito</h4>
+      <p>Acompañar a cada persona a <b>conocerse</b>, reconocer sus <b>fortalezas</b> y construir su <b>proyecto de vida</b>, con mirada psicopedagógica.</p>
+    </div>
+    <div class="card">
+      <h4>Servicios</h4>
+      <ul>
+        <li>Clínica psicopedagógica</li>
+        <li>Orientación vocacional y ocupacional (OVO)</li>
+        <li>Servicios educativos</li>
+      </ul>
+      <p class="note">Modalidad virtual. En contenido de campaña se habla desde la necesidad de la consulta, no desde la modalidad.</p>
+    </div>
+    <div class="card">
+      <h4>Enfoque OVO</h4>
+      <p>Autoconocimiento, identificación de fortalezas y construcción del proyecto de vida. Los tests (CHASIDE, SDS de Holland, cuestionario de valores) son <b>una parte</b>: el proceso integra intereses, contexto, mandatos familiares e historia personal.</p>
+    </div>
+    <div class="card">
+      <h4>Profesional</h4>
+      <p><b>Lic. Julieta Gárate</b>, psicopedagoga. Prof. de Nivel Inicial, Lic. en Psicopedagogía, Lic. en Educación. Ejerce en todo el ciclo vital.</p>
+      <p class="note">Siempre en presente. Nunca decir que Juli trabaja solo en LUMA ni que LUMA nació de la orientación vocacional.</p>
+    </div>
+  </div>
+
+  <h3>Dos públicos, dos conversaciones</h3>
+  <table>
+    <tr><th style="width:22%"></th><th>Familias / padres</th><th>Adolescentes</th></tr>
+    <tr><td><b>Rol</b></td><td>Quienes deciden y pagan</td><td>Protagonistas del proceso</td></tr>
+    <tr><td><b>Qué buscan</b></td><td>Entender cómo ayudar a su hijo/a a elegir con confianza</td><td>Saber quiénes son y hacia dónde quieren ir</td></tr>
+    <tr><td><b>Cómo les hablamos</b></td><td>"Tu hijo/a…", tono cercano y profesional, foco en acompañar</td><td>Directo a la persona, tono cercano, foco en conocerse</td></tr>
+    <tr><td><b>CTA típico</b></td><td>"¿Tenés dudas? Escribinos"</td><td>"Mandáselo a alguien que lo está pensando"</td></tr>
+  </table>
+  <p class="note" style="margin-top:10px">Argentina: voseo (tenés, sos, escribinos). LATAM / Miami: tuteo (tienes, eres, escríbenos). Nunca mezclar en una misma pieza.</p>
+
+  <h3>Embudo</h3>
+  <p>Consulta → llamada introductoria gratuita (familia + adolescente juntos) → sesión individual paga con el adolescente → cierre breve con la familia → sesiones siguientes agendadas al final de cada sesión.</p>
+
+  <h3>Diferencial</h3>
+  <div class="grid g3">
+    <div class="card"><h4>Mirada integral</h4><p>La elección se piensa con la historia, los intereses, los valores y el contexto de cada persona, más allá del resultado de un test.</p></div>
+    <div class="card"><h4>Formación triple</h4><p>Nivel Inicial, Psicopedagogía y Educación: una lectura del aprendizaje a lo largo de todo el ciclo vital.</p></div>
+    <div class="card"><h4>La familia incluida</h4><p>El proceso integra a la familia en momentos definidos, con el adolescente en el centro.</p></div>
+  </div>
+  <div class="todo" style="margin-top:20px">Slogan / frase de marca (si se define). Hoy el brief no fija ninguno.</div>
+</section>
+
+<!-- ============ 2. PALETA ============ -->
+<section class="page">
+  <div class="kicker">02 · Color</div>
+  <h2>Paleta <span class="u">y usos</span></h2>
+  <p class="lead">Tres colores de marca más blanco. El crema da calidez, la salvia identifica y el oliva oscuro sostiene la lectura.</p>
+
+  <div class="grid g3" style="margin-top:28px">
+    <div class="swatch">
+      <div class="chip" style="background:var(--salvia);color:var(--blanco)">Salvia</div>
+      <div class="meta"><b>Verde salvia</b><code>#7A8765</code><br>Fondo liso de slides, isotipo, acentos, subtítulos sobre crema, líneas onduladas.</div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--crema);color:var(--oliva);box-shadow:inset 0 0 0 1px var(--linea)">Crema</div>
+      <div class="meta"><b>Crema</b><code>#F4ECD8</code><br>Fondo principal. Texto sobre fondo salvia u oliva.</div>
+    </div>
+    <div class="swatch">
+      <div class="chip" style="background:var(--oliva);color:var(--crema)">Oliva</div>
+      <div class="meta"><b>Oliva oscuro</b><code>#3F4635</code><br>Títulos y texto sobre fondos claros.</div>
+    </div>
+  </div>
+
+  <div class="todo" style="margin-top:20px">HEX exacto del <b>verde salvia claro</b> usado como fondo con líneas onduladas en el feed (tomarlo del brand kit de Canva <code>kAGRLHSzN70</code>). En este documento se usa un tinte provisorio.</div>
+
+  <h3>Combinaciones permitidas</h3>
+  <table>
+    <tr><th>Texto / fondo</th><th>Contraste</th><th>Uso</th></tr>
+    <tr><td><span class="pair" style="background:var(--crema);color:var(--oliva);box-shadow:inset 0 0 0 1px var(--linea)">Oliva sobre crema</span></td><td>8,3 : 1</td><td>Todo: títulos, cuerpo, subtítulos.</td></tr>
+    <tr><td><span class="pair" style="background:var(--oliva);color:var(--blanco)">Blanco sobre oliva</span></td><td>9,8 : 1</td><td>Todo, incluido texto de cuerpo.</td></tr>
+    <tr><td><span class="pair" style="background:var(--salvia);color:var(--blanco)">Blanco sobre salvia</span></td><td>3,8 : 1</td><td>Títulos y textos grandes (desde ~40 px en 1080). Cuerpo corto en bold.</td></tr>
+    <tr><td><span class="pair" style="background:var(--salvia);color:var(--crema)">Crema sobre salvia</span></td><td>3,3 : 1</td><td>Solo títulos grandes.</td></tr>
+    <tr><td><span class="pair" style="background:var(--crema);color:var(--salvia);box-shadow:inset 0 0 0 1px var(--linea)">Salvia sobre crema</span></td><td>3,3 : 1</td><td>Subtítulos en mayúscula bold, detalles y líneas. Nunca párrafos.</td></tr>
+    <tr><td><span class="pair" style="background:var(--salvia);color:var(--oliva)">Oliva sobre salvia</span></td><td>2,6 : 1</td><td><b>Evitar.</b> No se lee en el celular.</td></tr>
+  </table>
+
+  <h3>Proporción sugerida por pieza</h3>
+  <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:700 13px/34px var(--sans);text-align:center">
+    <div style="flex:60;background:var(--crema);box-shadow:inset 0 0 0 1px var(--linea)">Crema 60%</div>
+    <div style="flex:25;background:var(--salvia);color:#fff">Salvia 25%</div>
+    <div style="flex:15;background:var(--oliva);color:var(--crema)">Oliva 15%</div>
+  </div>
+  <p class="note" style="margin-top:8px">Referencia orientativa para el feed en conjunto, no una regla por slide.</p>
+</section>
+
+<!-- ============ 3. TIPOGRAFÍA ============ -->
+<section class="page">
+  <div class="kicker">03 · Tipografía</div>
+  <h2>Serif para decir, <span class="u">sans para explicar</span></h2>
+  <p class="lead">Títulos en serif (Cambria o equivalente) y cuerpo en sans (Calibri o equivalente). Equivalentes libres: Caladea y Carlito.</p>
+
+  <div style="margin-top:24px">
+    <div class="type-row">
+      <div class="spec"><b>Título bold</b>Serif bold · tracking −2 a −3% · interlineado 1,05 · 96–120 px en 1080</div>
+      <div style="font:700 48px/1.05 var(--serif);letter-spacing:-.025em">Elegir carrera es un <span class="u">proyecto de vida</span></div>
+    </div>
+    <div class="type-row">
+      <div class="spec"><b>Título combinado</b>Serif cursiva regular + serif bold en la frase clave</div>
+      <div style="font:400 italic 40px/1.1 var(--serif);letter-spacing:-.01em">Tu hijo no sabe<br><span style="font-style:normal;font-weight:700;font-size:1.2em;letter-spacing:-.025em">qué estudiar?</span></div>
+    </div>
+    <div class="type-row">
+      <div class="spec"><b>Número de listado</b>Serif bold muy grande · 280–400 px en 1080</div>
+      <div style="font:700 96px/.9 var(--serif);letter-spacing:-.04em;color:var(--salvia)">3 <span style="font:700 18px/1 var(--sans);letter-spacing:.14em;color:var(--oliva);vertical-align:middle">SEÑALES</span></div>
+    </div>
+    <div class="type-row">
+      <div class="spec"><b>Subtítulo</b>Sans bold mayúscula · tracking +12% · 30–36 px en 1080</div>
+      <div style="font:700 15px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase">Cuando te conocés a vos mismo</div>
+    </div>
+    <div class="type-row">
+      <div class="spec"><b>Cuerpo</b>Sans regular · interlineado 1,35–1,45 · 38–44 px en 1080 · frase clave en <b style="display:inline">bold</b></div>
+      <div style="font:400 19px/1.45 var(--sans)">Conocerte antes de elegir te da <b>claridad</b> para decidir con confianza.</div>
+    </div>
+    <div class="type-row">
+      <div class="spec"><b>Título de reel</b>Sans bold blanco sobreimpreso sobre el video de Juli</div>
+      <div style="background:var(--oliva);color:#fff;font:700 26px/1.15 var(--sans);padding:14px 18px;border-radius:8px">La orientación vocacional</div>
+    </div>
+  </div>
+
+  <h3>Reglas de énfasis</h3>
+  <ul>
+    <li><b>Una sola</b> frase clave subrayada por título. El subrayado acompaña el color del texto, con grosor ~8% del cuerpo y separación generosa.</li>
+    <li>O subrayado, o combinación cursiva + bold. No las dos en el mismo título.</li>
+    <li>En el cuerpo, la frase clave va en <b>bold</b> (máximo dos por slide).</li>
+    <li>Sin mayúsculas sostenidas en títulos: la mayúscula queda para subtítulos sans.</li>
+  </ul>
+</section>
+
+<!-- ============ 4. COMPOSICIÓN ============ -->
+<section class="page">
+  <div class="kicker">04 · Composición</div>
+  <h2>Sistema visual <span class="u">del feed</span></h2>
+  <p class="lead">Tres fondos que se alternan a lo largo del carrusel y del feed. Ninguna slide repite el fondo de la anterior.</p>
+
+  <div class="slides" style="margin-top:28px">
+    <div>
+      <div class="slide claro">
+        <svg class="waves" style="color:var(--salvia);opacity:.7"><use href="#waves"/></svg>
+        <div class="t" style="position:relative">Elegir es un <span class="u">proceso</span></div>
+        <div class="s" style="position:relative;color:var(--salvia)">Subtítulo en sans</div>
+        <div class="sticker">Recorte con borde blanco</div>
+      </div>
+      <p class="caption"><b>A · Claro con líneas onduladas.</b> Título en oliva. Recorte tipo sticker apoyado sobre las líneas.</p>
+    </div>
+    <div>
+      <div class="slide oliva">
+        <div class="t">Una idea por <span class="u">slide</span></div>
+        <div class="b">Cuerpo breve en sans, con la <b>frase clave en bold</b>.</div>
+        <div class="brand">LUMA</div>
+      </div>
+      <p class="caption"><b>B · Salvia/oliva liso.</b> Texto en blanco o crema. Ideal para el gancho conceptual o el cierre.</p>
+    </div>
+    <div>
+      <div class="slide foto">
+        <div class="ph">Foto real a sangre</div>
+        <div class="content">
+          <div class="t" style="font-size:9.5cqw">Foto con <span class="u">fade</span> a crema</div>
+          <div class="s" style="color:var(--salvia)">Texto sobre la zona lisa</div>
+        </div>
+      </div>
+      <p class="caption"><b>C · Foto real.</b> Degradado suave hacia crema; el texto va siempre sobre la parte lisa.</p>
+    </div>
+  </div>
+
+  <h3>Recursos gráficos</h3>
+  <div class="grid g2">
+    <div class="card"><h4>Líneas onduladas</h4><p>Finas (2–3 px en 1080), en salvia, 5 a 8 líneas paralelas en la mitad inferior del fondo claro. Base para apoyar recortes.</p></div>
+    <div class="card"><h4>Recortes tipo sticker</h4><p>Personas reales (adolescentes, familia) recortadas con borde blanco de 16–24 px y sombra muy suave. Un recorte por slide.</p></div>
+    <div class="card"><h4>Foto con fade</h4><p>Foto suave, luz natural. Degradado a crema en el último 30–40% de la imagen. Nunca texto sobre zonas con detalle.</p></div>
+    <div class="card"><h4>Emoji</h4><p>Solo 🌿, como mucho uno por pieza, y preferentemente en el caption.</p></div>
+  </div>
+
+  <h3>Zonas seguras y márgenes</h3>
+  <div class="safe-wrap">
+    <div>
+      <div class="safe post">
+        <div class="zone margin" style="border-width:7.4cqw 7.4cqw 8.9cqw"></div>
+        <div class="zone grid-crop"></div>
+        <div class="zone live" style="inset:8.9cqw 7.4cqw 8.9cqw">Zona de texto<br>920 × 1110 px</div>
+      </div>
+      <p class="caption"><b>Carrusel 1080 × 1350.</b> Márgenes de 80 px a los lados y 96 px arriba y abajo. La línea punteada marca el recorte 3:4 de la grilla del perfil (≈ 40 px por lado): en la portada, el título queda dentro de ella.</p>
+    </div>
+    <div>
+      <div class="safe reel">
+        <div class="zone danger" style="top:0;left:0;right:0;height:11.5%">Interfaz superior · 220 px</div>
+        <div class="zone danger" style="bottom:0;left:0;right:0;height:22%">Caption y botones · 420 px</div>
+        <div class="zone danger" style="top:11.5%;bottom:22%;right:0;width:11%;writing-mode:vertical-rl">Iconos · 120 px</div>
+        <div class="zone live" style="top:14%;bottom:24%;left:6%;right:13%">Título y texto en pantalla</div>
+      </div>
+      <p class="caption"><b>Reel 1080 × 1920.</b> Evitar texto en los 220 px superiores, los 420 px inferiores y la franja derecha de íconos. Para la portada del reel en la grilla, mantener el título en el centro 1080 × 1350.</p>
+    </div>
+  </div>
+  <p class="note" style="margin-top:12px">Las medidas de interfaz de Instagram son de referencia y pueden cambiar con actualizaciones de la app: verificar en una vista previa antes de publicar.</p>
+</section>
+
+<!-- ============ 5. VOZ ============ -->
+<section class="page">
+  <div class="kicker">05 · Voz y tono</div>
+  <h2>Cálida, directa <span class="u">y afirmativa</span></h2>
+  <p class="lead">Conversacional, concisa, cálida pero directa. Rigor psicopedagógico traducido a lenguaje accesible, sin simplificar de más.</p>
+
+  <div class="grid g3" style="margin-top:24px">
+    <div class="card"><h4>Encuadre positivo</h4><p>Todo en lenguaje afirmativo y de ganancia. Sin "no" ni "sin" en los CTA; hooks de anuncio siempre en positivo.</p></div>
+    <div class="card"><h4>Desde la necesidad</h4><p>En campaña se vende la necesidad de la consulta, no el producto ni la obligación: nada de cantidad de sesiones ni modalidad.</p></div>
+    <div class="card"><h4>Sin relleno</h4><p>Cada frase aporta. Nada de "¡Genial!" ni muletillas de entusiasmo.</p></div>
+  </div>
+
+  <h3>Palabras y frases prohibidas</h3>
+  <table>
+    <tr><th style="width:38%">Evitar</th><th>Usar en su lugar</th></tr>
+    <tr><td class="strike">trabajamos</td><td>acompañamos · orientamos en función de</td></tr>
+    <tr><td class="strike">entorno</td><td>contexto · familia · escuela (lo concreto)</td></tr>
+    <tr><td class="strike">trabajé con…</td><td>acompaño a… (siempre en presente)</td></tr>
+    <tr><td class="strike">qué te mueve / lo que te mueve</td><td>conocerte · saber quién sos</td></tr>
+    <tr><td class="strike">rechaza · lenguaje clínico duro</td><td>le cuesta · todavía está buscando · describir la situación con palabras cotidianas</td></tr>
+    <tr><td class="strike">no hay nada mal en vos · no es un fracaso</td><td>Nombrar lo esperable en afirmativo: "Es parte de esta etapa"</td></tr>
+    <tr><td class="strike">Reservá tu primera sesión · cantidad de sesiones · 100% virtual (en campaña)</td><td>"¿Tenés dudas? Escribinos"</td></tr>
+    <tr><td class="strike">LUMA nació de la orientación vocacional · Juli trabaja solo en LUMA</td><td>LUMA como centro psicopedagógico integral; Juli como psicopedagoga que ejerce en todo el ciclo vital</td></tr>
+    <tr><td class="strike">Seguinos · seguí la cuenta</td><td>CTA de conversación o de compartir</td></tr>
+    <tr><td class="strike">Centro Pedagógico</td><td>LUMA Centro Psicopedagógico Integral</td></tr>
+  </table>
+
+  <h3>Así sí / así no</h3>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>Trabajamos la orientación vocacional con tu hijo.</div>
+    <div class="si"><span class="tag">Así sí</span>Acompañamos a tu hijo/a a conocerse para elegir con confianza.</div>
+  </div>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>Descubrí qué te mueve.</div>
+    <div class="si"><span class="tag">Así sí</span>Conocerte es el primer paso para saber hacia dónde querés ir.</div>
+  </div>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>No saber qué estudiar no es un fracaso.</div>
+    <div class="si"><span class="tag">Así sí</span>Llegar a esta etapa con preguntas es parte del proceso.</div>
+  </div>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>Reservá tu primera sesión: 4 encuentros 100% virtuales.</div>
+    <div class="si"><span class="tag">Así sí</span>¿Tenés dudas sobre cómo acompañar su elección? Escribinos.</div>
+  </div>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>Tu hijo rechaza estudiar y el entorno lo presiona.</div>
+    <div class="si"><span class="tag">Así sí</span>Cuando a tu hijo/a le cuesta decidir, conocerse le da claridad.</div>
+  </div>
+  <div class="do-dont">
+    <div class="no"><span class="tag">Así no</span>Durante años trabajé con adolescentes en LUMA.</div>
+    <div class="si"><span class="tag">Así sí</span>Acompaño a adolescentes y familias en la construcción de su proyecto de vida.</div>
+  </div>
+</section>
+
+<!-- ============ 6. ESTRUCTURA Y CTA ============ -->
+<section class="page">
+  <div class="kicker">06 · Carrusel y CTA</div>
+  <h2>Cinco slides, <span class="u">cinco ideas</span></h2>
+  <p class="lead">Máximo 5 slides. Cada slide aporta una idea distinta: nunca el mismo concepto dicho con otras palabras.</p>
+
+  <div class="steps" style="margin-top:24px">
+    <div class="step"><b>Portada</b>Hook en positivo. Título serif con la frase clave subrayada.</div>
+    <div class="step"><b>Gancho conceptual</b>La idea que reencuadra el tema.</div>
+    <div class="step"><b>Desarrollo</b>Lo concreto: ejemplos, preguntas, pasos.</div>
+    <div class="step"><b>Desarrollo</b>Una segunda idea nueva, o la consecuencia de la anterior.</div>
+    <div class="step"><b>Cierre + CTA</b>LUMA y la invitación, desde la necesidad.</div>
+  </div>
+  <p class="note" style="margin-top:10px">Fondos sugeridos: alternar A · B · C (claro, liso, foto) sin repetir fondo en slides consecutivas.</p>
+
+  <h3>Fórmulas de CTA</h3>
+  <div class="grid g2">
+    <div class="card">
+      <h4>Para familias · conversación</h4>
+      <ul>
+        <li>¿Tenés dudas? Escribinos.</li>
+        <li>¿Querés saber cómo acompañar su elección? Escribinos.</li>
+        <li>Contanos qué está pensando tu hijo/a. Te leemos.</li>
+      </ul>
+      <p class="note">Fórmula: pregunta desde la necesidad + verbo de contacto.</p>
+    </div>
+    <div class="card">
+      <h4>Para adolescentes · compartir</h4>
+      <ul>
+        <li>Mandáselo a alguien que lo está pensando.</li>
+        <li>Guardalo para cuando llegue la inscripción.</li>
+        <li>Compartilo con quien está por elegir.</li>
+      </ul>
+      <p class="note">Fórmula: verbo de compartir/guardar + a quién le sirve.</p>
+    </div>
+  </div>
+
+  <h3>Checklist antes de publicar</h3>
+  <div class="card">
+    <ul>
+      <li>Ninguna palabra de la lista prohibida.</li>
+      <li>Hook y CTA en lenguaje afirmativo, sin "no" ni "sin".</li>
+      <li>Cada slide aporta una idea distinta.</li>
+      <li>Voseo (AR) o tuteo (LATAM / Miami), sin mezclar.</li>
+      <li>Una sola frase subrayada por título; bold solo en frases clave.</li>
+      <li>Emoji: solo 🌿, como máximo uno.</li>
+      <li>Texto dentro de la zona segura; portada dentro del recorte 3:4.</li>
+      <li>Nombre completo: LUMA Centro Psicopedagógico Integral.</li>
+    </ul>
+  </div>
+
+  <h3>Pendientes de marca</h3>
+  <div class="grid g2">
+    <div class="todo">Archivo del logo (isotipo + "LUMA" en blanco sobre círculo salvia) y sus versiones.</div>
+    <div class="todo">HEX del verde salvia claro de fondo.</div>
+    <div class="todo">Usuario de Instagram y datos de contacto para el cierre.</div>
+    <div class="todo">Slogan o frase de marca, si se define.</div>
+  </div>
+</section>
+
+<div class="footer">LUMA Centro Psicopedagógico Integral · Brand book v1 · Canva brand kit <code>kAGRLHSzN70</code></div>
+
+</body>
+</html>
