@@ -43,7 +43,7 @@ Complementos que se usan en el feed (no están en el manual, documentarlos como 
 
 | Otros | Valor |
 |---|---|
-| Emoji | Mínimo; solo 🌿 |
+| Emoji | Uso libre |
 | Canva | Brand kit ID `kAGRLHSzN70` |
 | Formato carrusel IG | 1080 × 1350 px |
 
