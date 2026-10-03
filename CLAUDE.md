@@ -11,7 +11,7 @@
 - **Servicios:** clínica psicopedagógica, orientación vocacional y ocupacional (OVO) y servicios educativos. Modalidad virtual.
 - **Enfoque OVO:** autoconocimiento, identificación de fortalezas y construcción del proyecto de vida. Los tests (CHASIDE, SDS de Holland, cuestionario de valores) son una parte; la práctica psicopedagógica actual integra intereses, contexto, mandatos familiares e historia personal.
 - **Público:** familias/padres de adolescentes (quien paga) y adolescentes (sujeto del proceso). Argentina (voseo) y LATAM / Miami (tuteo).
-- **Embudo:** consulta → llamada introductoria gratuita (familia + adolescente juntos) → sesión individual paga con el adolescente → cierre breve con la familia → sesiones siguientes agendadas al final de cada sesión.
+- **Embudo (confirmado oct 2026):** consulta de la familia → primera sesión individual paga con el adolescente (sin llamada gratuita previa: los padres son quienes convencen al hijo/a, como en cualquier consulta profesional) → cierre breve con la familia → sesiones siguientes agendadas al final de cada sesión.
 
 ## 2. Identidad visual (base del brand book)
 
@@ -73,13 +73,21 @@ Complementos que se usan en el feed (no están en el manual, documentarlos como 
 - "qué te mueve" / "lo que te mueve" → expresarlo como autoconocimiento (conocerte, saber quién sos)
 - "rechaza" o lenguaje clínico duro
 - Frases tipo "no hay nada mal en vos" / "no es un fracaso" (suenan condescendientes)
-- "Reservá tu primera sesión" y hablar del programa (cantidad de sesiones, 100% virtual) en contenido de campaña: se vende desde la **necesidad de la consulta**, no desde el producto ni desde la obligación
+- Hablar del programa (cantidad de sesiones, 100% virtual) en contenido de campaña: se vende desde la **necesidad de la consulta**, no desde el producto
 - Decir que LUMA nació de la orientación vocacional o que Juli trabaja solo en LUMA
 - Pedir que sigan la cuenta
 
-**CTAs:** conversacionales ("¿Tenés dudas? Escribinos") o de compartir para contenido adolescente ("Mandáselo a alguien que lo está pensando").
+**CTAs según etapa del embudo:** TOFU/orgánico → compartir o guardar ("Mandáselo a alguien que lo está pensando"); MOFU → conversación ("¿Tenés dudas? Escribinos"); BOFU (anuncios y captions de venta) → "Reservá su primera sesión". Nunca CTA de venta en contenido educativo.
 
 **Estructura de carrusel:** portada → gancho conceptual → desarrollo → cierre con CTA. **Máximo 5 slides.** Cada slide con una idea distinta (sin repetir el mismo concepto con otras palabras).
+
+## Objetivos de negocio y estado de la cuenta (octubre 2026)
+- **Objetivo:** crecer y consolidarse como centro psicopedagógico integral de referencia que facture. Meta: facturación de **al menos 10 veces** la inversión en anuncios.
+- **Presupuesto de anuncios:** hasta **$200.000 ARS por mes**, para **Córdoba y Mendoza**.
+- **Cuenta:** 225 seguidores (partió de menos de 100).
+- **Segmentación actual:** solo Instagram (Facebook no rinde), 35 a 55 años, intereses en psicopedagogía, orientación vocacional, adolescencia y educación.
+- **Historial:** etapa 1 (15 jul – 17 ago) prueba de venta por mensajes: $221.853, 174 conversaciones, 0 reuniones, 0 ventas. Etapa 2 (septiembre) crecimiento de marca con objetivo visitas al perfil. A fines de septiembre, a pedido de Juli, dos promociones activas pasaron a objetivo Mensajes (en aprendizaje).
+- **Precios de referencia (doc "Respuestas a mensajes", a confirmar):** encuentro individual $45.000; programa de 4 encuentros $150.000.
 
 ## 4. Lo que ya está dicho (no repetir)
 
