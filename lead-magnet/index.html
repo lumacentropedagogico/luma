@@ -2,255 +2,136 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Conocerte es el primer paso · LUMA</title>
+<title>Tu árbol · LUMA</title>
 <style>
-  @font-face { font-family: "Calistoga"; src: url("../assets/fonts/Calistoga-Regular.ttf") format("truetype"); }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-300-normal.woff2") format("woff2"); font-weight: 300; }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-300-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
-  @font-face { font-family: "Metropolis"; src: url("../assets/fonts/metropolis-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  /* Títulos: Calistoga. Textos: Neue Montreal (si está en assets/fonts) con Inter Tight como reemplazo. */
+  @font-face { font-family: "Calistoga"; src: url("../assets/fonts/Calistoga-Regular.ttf"); }
+  @font-face { font-family: "Neue Montreal"; src: url("../assets/fonts/NeueMontreal-Light.otf"), url("../assets/fonts/InterTight-300.ttf"); font-weight: 300; }
+  @font-face { font-family: "Neue Montreal"; src: url("../assets/fonts/NeueMontreal-Regular.otf"), url("../assets/fonts/InterTight-400.ttf"); font-weight: 400; }
+  @font-face { font-family: "Neue Montreal"; src: url("../assets/fonts/NeueMontreal-Medium.otf"), url("../assets/fonts/InterTight-500.ttf"); font-weight: 500; }
+  @font-face { font-family: "Neue Montreal"; src: url("../assets/fonts/NeueMontreal-Bold.otf"), url("../assets/fonts/InterTight-700.ttf"); font-weight: 700; }
 
   :root {
     --salvia: #AAB9A6; --oliva: #6C7065; --rosa: #D9C7BF; --taupe: #A19089;
     --papel: #F4F5EF; --salvia-suave: #D2DDCB; --blanco: #FFFFFF;
     --display: "Calistoga", Georgia, serif;
-    --sans: "Metropolis", "Helvetica Neue", Arial, "Noto Color Emoji", sans-serif;
-    --line: rgba(108,112,101,.35);
+    --sans: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
   }
   @page { size: 1080px 1920px; margin: 0; }
   * { box-sizing: border-box; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  body { margin: 0; background: #ccc; font-family: var(--sans); color: var(--oliva); }
-  .page { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: var(--papel); break-after: page; padding: 120px 96px 110px; display: flex; flex-direction: column; }
+  body { margin: 0; background: #bbb; font-family: var(--sans); color: var(--oliva); letter-spacing: -0.015em; }
+  .page { width: 1080px; height: 1920px; position: relative; overflow: hidden; background: var(--papel); break-after: page; }
   .page:last-child { break-after: auto; }
-  .page.dark { background: var(--oliva); color: var(--blanco); }
-  .page.sage { background: var(--salvia-suave); }
-  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; line-height: 1.02; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; letter-spacing: -0.01em; }
   p { margin: 0; }
-  b { font-weight: 600; }
-  .kicker { font: 600 26px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; display: flex; align-items: center; gap: 18px; }
-  .kicker::before { content: ""; width: 48px; height: 3px; background: var(--rosa); }
-  .u { text-decoration: underline; text-decoration-thickness: .06em; text-underline-offset: .12em; text-decoration-skip-ink: none; }
-  .light { font: 300 1em/1.1 var(--sans); letter-spacing: -.02em; }
-  .waves { position: absolute; left: 0; right: 0; bottom: 0; height: 520px; width: 100%; color: var(--salvia); }
-  .foot { position: absolute; left: 96px; right: 96px; bottom: 64px; display: flex; justify-content: space-between; align-items: center; font: 500 22px/1 var(--sans); letter-spacing: .04em; }
-  .foot img { height: 64px; }
-  .pn { opacity: .7; }
+  b { font-weight: 700; }
+  .e { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -0.16em; }
+  .pill { display: inline-flex; align-items: center; gap: 12px; font: 500 26px/1 var(--sans); letter-spacing: 0; padding: 16px 26px; border-radius: 99px; }
+  .u { text-decoration: underline; text-decoration-thickness: .055em; text-underline-offset: .1em; text-decoration-skip-ink: none; }
 
-  /* Portada */
-  .cover h1 { font-size: 132px; margin-top: 70px; }
-  .cover h1 .light { display: block; font-size: 72px; margin-bottom: 18px; }
-  .cover .lead { font: 300 40px/1.4 var(--sans); margin-top: 56px; max-width: 820px; }
-  .cover .chips { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 60px; max-width: 860px; }
-  .cover .chips span { font: 600 26px/1 var(--sans); padding: 18px 26px; border-radius: 99px; background: var(--blanco); }
-  .cover .logo { position: absolute; left: 96px; bottom: 120px; width: 300px; }
+  /* ---------- 1 · Portada ---------- */
+  .cover { background: var(--oliva) url("art/fondo-blur.jpg") center / cover; }
+  .cover::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(108,112,101,.55), rgba(108,112,101,.92) 70%); }
+  .glass { position: absolute; left: 64px; right: 64px; top: 96px; bottom: 96px; border-radius: 48px; background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); padding: 72px 64px 64px; color: var(--blanco); display: flex; flex-direction: column; }
+  .glass .top { display: flex; justify-content: space-between; align-items: center; }
+  .glass .top img { height: 74px; }
+  .glass .pill { background: rgba(255,255,255,.92); color: var(--oliva); }
+  .cover h1 { margin-top: 96px; font-size: 128px; line-height: .94; color: var(--salvia-suave); }
+  .cover h1 .l { display: block; font: 300 64px/1.05 var(--sans); letter-spacing: -0.035em; color: var(--blanco); margin-bottom: 18px; }
+  .cover .lead { margin-top: 44px; font: 300 38px/1.2 var(--sans); max-width: 800px; }
+  .cover .lead b { color: var(--salvia-suave); }
+  .feat { margin-top: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feat div { background: rgba(255,255,255,.92); color: var(--oliva); border-radius: 32px; padding: 30px 26px; }
+  .feat img { width: 56px; height: 56px; }
+  .feat b { display: block; font: 700 27px/1.15 var(--sans); margin-top: 18px; }
+  .feat span { display: block; font: 300 23px/1.2 var(--sans); margin-top: 8px; }
+  .parents { margin-top: 30px; font: 300 24px/1.25 var(--sans); opacity: .9; display: flex; gap: 14px; align-items: center; }
 
-  /* Cómo usarla */
-  .steps { margin-top: 64px; display: flex; flex-direction: column; gap: 28px; }
-  .step { display: grid; grid-template-columns: 110px 1fr; gap: 28px; align-items: start; background: var(--blanco); border-radius: 36px; padding: 40px 44px; }
-  .step .n { font: 400 88px/.9 var(--display); color: var(--rosa); -webkit-text-stroke: 2px var(--taupe); }
-  .step h3 { font-size: 46px; margin-bottom: 12px; }
-  .step p { font: 400 31px/1.42 var(--sans); }
-  .note { margin-top: 36px; border-radius: 36px; padding: 40px 44px; background: var(--oliva); color: var(--blanco); }
-  .note .t { font: 600 24px/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--salvia-suave); margin-bottom: 18px; }
-  .note p { font: 400 31px/1.45 var(--sans); }
+  /* ---------- 2 · Árbol ---------- */
+  .tree-page { background: var(--papel); }
+  .tree-head { position: absolute; left: 80px; right: 80px; top: 88px; }
+  .tree-head .pill { background: var(--salvia-suave); }
+  .tree-head .bar { display: flex; justify-content: space-between; align-items: center; }
+  .tree-head .bar img { height: 78px; }
+  .tree-head h1 { margin-top: 44px; font-size: 132px; line-height: .92; }
+  .tree-head h1 .l { display: block; font: 300 60px/1.05 var(--sans); letter-spacing: -0.035em; margin-bottom: 14px; }
+  .tree-head p { margin-top: 24px; font: 300 33px/1.2 var(--sans); max-width: 860px; }
+  .tree { position: absolute; left: -30px; top: 786px; width: 1140px; height: 1134px; background: url("art/arbol.png") center / 100% 100% no-repeat; }
+  .bubble { position: absolute; transform: translate(-50%, -50%); text-align: center; }
+  .bubble .lab { font: 700 25px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--oliva); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .bubble .lab img { width: 34px; height: 34px; }
+  .bubble .ln { margin: 18px auto 0; width: var(--w, 210px); height: 132px; background: repeating-linear-gradient(transparent 0 42px, rgba(108,112,101,.45) 42px 44px); }
+  .bubble.center .lab { color: var(--blanco); font-size: 21px; }
+  .bubble.center .ln { background: repeating-linear-gradient(transparent 0 38px, rgba(255,255,255,.55) 38px 40px); height: 80px; }
 
-  /* Árbol */
-  .tree-head h2 { font-size: 86px; margin-top: 30px; }
-  .tree-head p { font: 300 32px/1.4 var(--sans); margin-top: 22px; max-width: 860px; }
-  .tree { position: absolute; left: 0; top: 400px; width: 1080px; height: 1330px; }
-
-  /* Preguntas */
-  .qhead h2 { font-size: 80px; margin-top: 30px; }
-  .qhead p { font: 300 31px/1.4 var(--sans); margin-top: 20px; }
-  .qcards { margin-top: 50px; display: flex; flex-direction: column; gap: 30px; }
-  .qcard { background: var(--blanco); border-radius: 36px; padding: 38px 44px 30px; }
-  .qcard h3 { font-size: 50px; display: flex; align-items: center; gap: 16px; }
-  .qcard h3 small { font: 600 22px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--taupe); margin-left: auto; }
-  .qcard ul { list-style: none; margin: 20px 0 0; padding: 0; }
-  .qcard li { font: 400 29px/1.38 var(--sans); padding: 12px 0 12px 40px; position: relative; }
-  .qcard li::before { content: ""; position: absolute; left: 4px; top: 25px; width: 14px; height: 14px; border-radius: 50%; background: var(--salvia); }
-  .qcard .lines { margin-top: 10px; height: 116px; background: repeating-linear-gradient(transparent 0 56px, var(--line) 56px 58px); }
-
-  /* Cierre */
-  .end h2 { font-size: 104px; margin-top: 40px; }
-  .end .lead { font: 300 38px/1.45 var(--sans); margin-top: 40px; color: var(--salvia-suave); }
-  .end .box { margin-top: 64px; background: var(--blanco); color: var(--oliva); border-radius: 40px; padding: 52px 52px 48px; }
-  .end .box h3 { font-size: 54px; }
-  .end .box p { font: 400 31px/1.45 var(--sans); margin-top: 18px; }
-  .end .cta { display: inline-block; margin-top: 34px; background: var(--oliva); color: var(--blanco); font: 400 36px/1 var(--display); padding: 28px 40px; border-radius: 22px; }
-  .end .sec { margin-top: 48px; font: 400 31px/1.5 var(--sans); }
-  .end .logo { position: absolute; left: 96px; bottom: 110px; width: 260px; }
+  /* ---------- 3 · Preguntas + cierre ---------- */
+  .q-page { background: var(--papel); padding: 104px 72px 0; }
+  .q-page .pill { background: var(--salvia-suave); }
+  .q-page h2 { margin-top: 30px; font-size: 96px; line-height: .95; }
+  .q-page .sub { margin-top: 20px; font: 300 32px/1.2 var(--sans); }
+  .qgrid { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .q { background: var(--blanco); border-radius: 32px; padding: 30px 30px 32px; }
+  .q .h { display: flex; align-items: center; gap: 12px; font: 400 36px/1 var(--display); }
+  .q .h img { width: 44px; height: 44px; }
+  .q p { margin-top: 16px; font: 300 26px/1.22 var(--sans); }
+  .q.dark { background: var(--salvia-suave); }
+  .tips { margin-top: 40px; display: flex; flex-direction: column; gap: 0; border-top: 1.5px solid rgba(108,112,101,.2); }
+  .tips div { display: flex; gap: 20px; align-items: center; padding: 22px 6px; border-bottom: 1.5px solid rgba(108,112,101,.2); }
+  .tips img { width: 46px; height: 46px; flex: none; }
+  .tips p { font: 300 27px/1.22 var(--sans); }
+  .cta { position: absolute; left: 72px; right: 72px; bottom: 72px; background: var(--oliva); color: var(--blanco); border-radius: 44px; padding: 48px 52px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: end; }
+  .cta h3 { font-size: 60px; line-height: .98; color: var(--salvia-suave); }
+  .cta p { margin-top: 18px; font: 300 30px/1.2 var(--sans); }
+  .cta .pill { background: var(--blanco); color: var(--oliva); margin-top: 30px; }
+  .cta img.logo { width: 170px; }
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="waves" viewBox="0 0 1080 520" preserveAspectRatio="none">
-      <g fill="none" stroke="currentColor" stroke-width="2.4">
-        <path d="M0 200 C 220 120, 420 300, 640 210 S 960 120, 1080 190"/>
-        <path d="M0 250 C 220 170, 420 350, 640 260 S 960 170, 1080 240"/>
-        <path d="M0 300 C 220 220, 420 400, 640 310 S 960 220, 1080 290"/>
-        <path d="M0 350 C 220 270, 420 450, 640 360 S 960 270, 1080 340"/>
-        <path d="M0 400 C 220 320, 420 500, 640 410 S 960 320, 1080 390"/>
-      </g>
-    </symbol>
-  </defs>
-</svg>
-
-<!-- 1 · PORTADA -->
-<section class="page cover">
-  <div class="kicker">Herramienta gratuita · LUMA</div>
-  <h1><span class="light">Conocerte es</span>el <span class="u">primer paso</span></h1>
-  <p class="lead">Un árbol para pensar qué estudiar desde lo más importante: <b>quién sos</b>. Para completar con calma, solo/a o en familia.</p>
-  <div class="chips"><span>🎨 Intereses</span><span>💡 Habilidades</span><span>💚 Valores</span><span>⭐ Estilo</span><span>😀 Personalidad</span><span>🌿 Historia de vida</span></div>
-  <svg class="waves" style="opacity:.55"><use href="#waves"/></svg>
-  <img class="logo" src="../assets/logo-luma.svg" alt="LUMA Centro Psicopedagógico Integral">
-</section>
-
-<!-- 2 · CÓMO USARLA -->
-<section class="page">
-  <div class="kicker">Antes de empezar</div>
-  <h2 style="font-size:92px;margin-top:30px">Cómo usar <span class="u">este árbol</span></h2>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><div><h3>Elegí cómo escribir</h3><p>Imprimilo, copialo en un cuaderno o respondé en las notas del celular. Lo importante es escribir, no el formato.</p></div></div>
-    <div class="step"><span class="n">2</span><div><h3>Una rama por día</h3><p>Usá las preguntas guía de las páginas siguientes. Con 15 minutos por rama alcanza: en una semana tenés el árbol completo.</p></div></div>
-    <div class="step"><span class="n">3</span><div><h3>Mandanos una foto</h3><p>Respondé el mensaje donde recibiste este PDF con una foto de tu árbol, y lo charlamos.</p></div></div>
-  </div>
-  <div class="note">
-    <div class="t">Para madres y padres</div>
-    <p>Este árbol es de tu hijo/a. Tu lugar es <b>acompañar y escuchar</b>: ofrecé un rato tranquilo, preguntá con curiosidad y dejá que las respuestas sean suyas.</p>
-  </div>
-  <div class="foot"><img src="../assets/logo-luma.svg" alt=""><span class="pn">2 / 6</span></div>
-</section>
-
-<!-- 3 · EL ÁRBOL -->
-<section class="page" style="background:linear-gradient(to bottom, var(--papel) 0 1720px, #E4E1D6 1720px)">
+<!-- 1 · ÁRBOL -->
+<section class="page tree-page">
   <div class="tree-head">
-    <div class="kicker">Tu árbol</div>
-    <h2>Completá <span class="u">cada rama</span></h2>
-    <p>Las raíces son tu historia; el tronco, tu forma de ser; las ramas, hacia dónde podés crecer.</p>
+    <div class="bar"><span class="pill"><img class="e" src="emoji/1f33f.png" alt="">Herramienta gratuita</span><img src="../assets/logo-luma.svg" alt="LUMA"></div>
+    <h1><span class="l">Antes de elegir carrera,</span>descubrí<br><span class="u">quién sos</span></h1>
+    <p>Completá las 6 ramas de tu árbol: <b>una por día, 15 minutos</b>.</p>
   </div>
-  <svg class="tree" viewBox="0 0 1080 1330" aria-label="Árbol del autoconocimiento">
-    <path d="M0 1010 C 260 950, 820 950, 1080 1010 L1080 1330 L0 1330 Z" fill="#E4E1D6"/>
-    <g fill="none" stroke="#A19089" stroke-linecap="round" opacity=".75">
-      <path d="M520 1000 C 470 1040, 380 1060, 300 1110" stroke-width="12"/>
-      <path d="M560 1000 C 610 1040, 700 1060, 780 1110" stroke-width="12"/>
-    </g>
-    <g fill="none" stroke="#A19089" stroke-linecap="round">
-      <path d="M540 1010 C 532 900, 548 760, 540 600" stroke-width="58"/>
-      <path d="M540 700 C 460 660, 380 620, 300 590" stroke-width="24"/>
-      <path d="M540 700 C 620 660, 700 620, 780 590" stroke-width="24"/>
-      <path d="M540 620 C 500 500, 420 380, 330 300" stroke-width="22"/>
-      <path d="M540 620 C 580 500, 660 380, 750 300" stroke-width="22"/>
-    </g>
-    <g fill="#AAB9A6" opacity=".85">
-      <ellipse cx="455" cy="450" rx="30" ry="13" transform="rotate(-50 455 450)"/>
-      <ellipse cx="625" cy="450" rx="30" ry="13" transform="rotate(50 625 450)"/>
-      <ellipse cx="420" cy="660" rx="28" ry="12" transform="rotate(25 420 660)"/>
-      <ellipse cx="660" cy="660" rx="28" ry="12" transform="rotate(-25 660 660)"/>
-      <ellipse cx="540" cy="560" rx="24" ry="11" transform="rotate(90 540 560)"/>
-    </g>
-    <g font-family="Metropolis, Arial, 'Noto Color Emoji'" text-anchor="middle">
-      <g transform="translate(300 200)">
-        <circle r="150" fill="#FFFFFF" stroke="#AAB9A6" stroke-width="4"/>
-        <text y="-58" font-size="24" font-weight="700" letter-spacing="3" fill="#6C7065">💡 HABILIDADES</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-      <g transform="translate(780 200)">
-        <circle r="150" fill="#FFFFFF" stroke="#AAB9A6" stroke-width="4"/>
-        <text y="-58" font-size="26" font-weight="700" letter-spacing="3" fill="#6C7065">💚 VALORES</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-      <g transform="translate(175 590)">
-        <circle r="150" fill="#FFFFFF" stroke="#AAB9A6" stroke-width="4"/>
-        <text y="-58" font-size="26" font-weight="700" letter-spacing="3" fill="#6C7065">🎨 INTERESES</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-      <g transform="translate(905 590)">
-        <circle r="150" fill="#FFFFFF" stroke="#AAB9A6" stroke-width="4"/>
-        <text y="-58" font-size="26" font-weight="700" letter-spacing="3" fill="#6C7065">⭐ ESTILO</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-      <g transform="translate(540 800)">
-        <circle r="150" fill="#D2DDCB" stroke="#6C7065" stroke-width="4"/>
-        <text y="-58" font-size="21" font-weight="700" letter-spacing="2" fill="#6C7065">😀 PERSONALIDAD</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-      <g transform="translate(540 1160)">
-        <circle r="150" fill="#FFFFFF" stroke="#A19089" stroke-width="4"/>
-        <text y="-58" font-size="26" font-weight="700" letter-spacing="3" fill="#6C7065">🌿 HISTORIA</text>
-        <g stroke="#6C7065" stroke-opacity=".35" stroke-width="2"><line x1="-100" x2="100" y1="-8" y2="-8"/><line x1="-108" x2="108" y1="36" y2="36"/><line x1="-100" x2="100" y1="80" y2="80"/></g>
-      </g>
-    </g>
-  </svg>
-  <div class="foot" style="color:var(--oliva)"><img src="../assets/logo-luma.svg" alt=""><span class="pn">3 / 6</span></div>
+  <div class="tree">
+    <div class="bubble" style="left:31.7%;top:14.4%"><span class="lab" style="font-size:22px">Habilidades <img src="emoji/1f4a1.png" alt=""></span><div class="ln"></div></div>
+    <div class="bubble" style="left:68.6%;top:14.4%"><span class="lab">Valores <img src="emoji/1f49a.png" alt=""></span><div class="ln"></div></div>
+    <div class="bubble" style="left:19.2%;top:41.4%"><span class="lab">Intereses <img src="emoji/1f3a8.png" alt=""></span><div class="ln"></div></div>
+    <div class="bubble" style="left:81.8%;top:41.4%"><span class="lab">Estilo <img src="emoji/2b50.png" alt=""></span><div class="ln"></div></div>
+    <div class="bubble center" style="left:49.7%;top:42.7%;--w:150px"><span class="lab"><img src="emoji/1f600.png" alt="" style="width:28px;height:28px">Personalidad</span><div class="ln"></div></div>
+    <div class="bubble" style="left:49.7%;top:74.3%;--w:240px"><span class="lab">Historia de vida <img src="emoji/1f33f.png" alt=""></span><div class="ln"></div></div>
+  </div>
 </section>
 
-<!-- 4 · RAMAS -->
-<section class="page">
-  <div class="qhead">
-    <div class="kicker">Preguntas guía · las ramas</div>
-    <h2>Hacia dónde <span class="u">podés crecer</span></h2>
-    <p>Elegí las preguntas que más te digan. Con una o dos frases por pregunta alcanza.</p>
+<!-- 3 · PREGUNTAS + CIERRE -->
+<section class="page q-page">
+  <span class="pill"><img class="e" src="emoji/2728.png" alt="">Preguntas guía</span>
+  <h2>¿Por dónde <span class="u">empezar?</span></h2>
+  <p class="sub">Elegí una pregunta por rama y respondé con <b>lo primero que te salga</b>.</p>
+  <div class="qgrid">
+    <div class="q"><div class="h"><img src="emoji/1f3a8.png" alt="">Intereses</div><p>¿Qué hacés cuando <b>nadie te pide nada</b>? ¿De qué temas podrías hablar horas?</p></div>
+    <div class="q"><div class="h"><img src="emoji/1f4a1.png" alt="">Habilidades</div><p>¿En qué te piden <b>ayuda tus amigos</b>? ¿Qué te sale fácil y a otros les cuesta?</p></div>
+    <div class="q"><div class="h"><img src="emoji/1f49a.png" alt="">Valores</div><p>¿A quién <b>admirás</b>, y por qué? ¿Qué te gustaría cambiar del mundo?</p></div>
+    <div class="q"><div class="h"><img src="emoji/2b50.png" alt="">Estilo</div><p>¿Equipo o tiempo para vos? ¿Aprendés <b>haciendo, leyendo o escuchando</b>?</p></div>
+    <div class="q dark"><div class="h"><img src="emoji/1f600.png" alt="">Personalidad</div><p>¿Cómo te describirían <b>tres personas</b> que te conocen bien?</p></div>
+    <div class="q dark"><div class="h"><img src="emoji/1f33f.png" alt="">Historia de vida</div><p>¿Qué soñabas ser de chico/a? ¿Qué <b>momentos te marcaron</b>?</p></div>
   </div>
-  <div class="qcards">
-    <div class="qcard"><h3>🎨 Intereses</h3><ul>
-      <li>¿Qué hacés cuando tenés tiempo libre y nadie te pide nada?</li>
-      <li>¿Sobre qué temas podrías hablar horas?</li></ul></div>
-    <div class="qcard"><h3>💡 Habilidades</h3><ul>
-      <li>¿En qué te piden ayuda tus amigos o tu familia?</li>
-      <li>¿Qué te sale fácil y a otros les cuesta?</li></ul></div>
-    <div class="qcard"><h3>💚 Valores</h3><ul>
-      <li>¿Qué tiene que tener tu vida para que sientas que vale la pena?</li>
-      <li>¿A quién admirás, y por qué?</li></ul></div>
-    <div class="qcard"><h3>⭐ Estilo</h3><ul>
-      <li>¿Te sentís mejor en equipo o con tiempo para vos?</li>
-      <li>¿Aprendés mejor haciendo, leyendo o escuchando?</li></ul></div>
+  <div class="tips">
+    <div><img src="emoji/270f-fe0f.png" alt=""><p><b>Imprimilo</b> o pasalo a tu cuaderno: lo importante es escribir.</p></div>
+    <div><img src="emoji/1f50d.png" alt=""><p>Con el árbol completo, <b>buscá lo que se repite</b> entre ramas: ahí hay una pista.</p></div>
+    <div><img src="emoji/1f4ac.png" alt=""><p>¿Sos madre o padre? <b>Compartíselo</b> y acompañá desde la escucha.</p></div>
   </div>
-  <div class="foot"><img src="../assets/logo-luma.svg" alt=""><span class="pn">4 / 6</span></div>
-</section>
-
-<!-- 5 · TRONCO Y RAÍCES -->
-<section class="page sage">
-  <div class="qhead">
-    <div class="kicker">Preguntas guía · tronco y raíces</div>
-    <h2>Quién sos y <span class="u">de dónde venís</span></h2>
-    <p>Tu forma de ser y tu historia sostienen todo lo demás.</p>
+  <div class="cta">
+    <div>
+      <h3>¿Lo terminaste? <img class="e" src="emoji/1f4f8.png" alt=""></h3>
+      <p>Respondé el chat donde recibiste este PDF con una foto de tu árbol y <b>lo charlamos</b>. ¿Querés ir más profundo?</p>
+      <span class="pill">Reservá tu primera sesión <img class="e" src="emoji/1f33f.png" alt=""></span>
+    </div>
+    <img class="logo" src="../assets/logo-luma-blanco.svg" alt="LUMA">
   </div>
-  <div class="qcards">
-    <div class="qcard"><h3>😀 Personalidad</h3><ul>
-      <li>¿Cómo te describirían tres personas que te conocen bien?</li>
-      <li>¿Qué actividades te dan energía?</li>
-      <li>¿Cómo reaccionás frente a un desafío nuevo?</li></ul></div>
-    <div class="qcard"><h3>🌿 Historia de vida</h3><ul>
-      <li>¿Qué momentos de tu vida te marcaron?</li>
-      <li>¿Qué materias o actividades disfrutaste en cada etapa?</li>
-      <li>¿Qué soñabas ser de chico/a? ¿Qué quedó de ese sueño?</li></ul></div>
-  </div>
-  <div class="qcard" style="margin-top:30px;background:var(--oliva);color:#fff">
-    <h3 style="font-size:44px">Para cerrar, mirá tu árbol completo</h3>
-    <p style="font:400 30px/1.45 var(--sans);margin-top:16px">¿Qué palabras o ideas se repiten en distintas ramas? <b style="color:var(--salvia-suave)">Ahí hay una pista</b> de hacia dónde orientar tu elección.</p>
-  </div>
-  <div class="foot"><img src="../assets/logo-luma.svg" alt=""><span class="pn">5 / 6</span></div>
-</section>
-
-<!-- 6 · CIERRE -->
-<section class="page dark end">
-  <div class="kicker" style="color:var(--salvia-suave)">Y ahora</div>
-  <h2>Tu árbol es el <span class="u">punto de partida</span></h2>
-  <p class="lead">Lo que escribiste dice mucho sobre vos. Ponerlo en palabras con alguien que acompaña ese proceso lo convierte en un camino.</p>
-  <div class="box">
-    <h3>Charlemos sobre tu árbol</h3>
-    <p>Respondé el mensaje donde recibiste este PDF con una foto de tu árbol completo.</p>
-    <span class="cta">Mandanos tu foto 📸</span>
-  </div>
-  <p class="sec">¿Querés profundizar? En LUMA acompañamos la orientación vocacional con <b style="color:var(--salvia-suave)">mirada psicopedagógica</b>. Escribinos para reservar la primera sesión.</p>
-  <svg class="waves" style="opacity:.18;height:420px"><use href="#waves"/></svg>
-  <img class="logo" src="../assets/logo-luma-blanco.svg" alt="LUMA">
 </section>
 
 </body>
