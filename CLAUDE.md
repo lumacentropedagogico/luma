@@ -154,5 +154,6 @@ carrusel y devolveme siempre la versión completa.
 ## Estado del proyecto
 
 - `assets/`: manual de marca y logos descargados del Drive; `logo-luma.svg` / `logo-luma-blanco.svg` extraídos en vector del manual; fuentes Calistoga + Metropolis en `assets/fonts/`.
-- `brand-book/index.html` + `brand-book/luma-brand-book.pdf`: brand book v2 (paleta oficial).
+- `brand-book/index.html` + `brand-book/luma-brand-book.pdf`: brand book v3, maquetado como web (una página por sección). Imágenes reales del feed en `brand-book/img/`.
+- Exportar el PDF: `NODE_PATH=$(npm root -g) node tools/export-brandbook.cjs`.
 - Referencia de estilo en Canva: carrusel "orientacion vocacional" (DAHOQ45h_4I).
