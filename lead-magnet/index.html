@@ -27,7 +27,8 @@
   p { margin: 0; }
   b { font-weight: 700; }
   .e { display: inline-block; width: 1.05em; height: 1.05em; vertical-align: -0.16em; }
-  .pill { display: inline-flex; align-items: center; gap: 12px; font: 500 26px/1 var(--sans); letter-spacing: 0; padding: 16px 26px; border-radius: 99px; }
+  .pill { display: inline-flex; align-items: center; gap: 12px; height: 64px; padding: 0 30px 0 22px; border-radius: 99px; font: 500 25px/1 var(--sans); letter-spacing: -0.01em; }
+  .pill img { width: 32px; height: 32px; display: block; }
   .u { text-decoration: underline; text-decoration-thickness: .055em; text-underline-offset: .1em; text-decoration-skip-ink: none; }
 
   /* ---------- 1 · Portada ---------- */
@@ -53,17 +54,15 @@
   .tree-head { position: absolute; left: 80px; right: 80px; top: 88px; }
   .tree-head .pill { background: var(--salvia-suave); }
   .tree-head .bar { display: flex; justify-content: space-between; align-items: center; }
-  .tree-head .bar img { height: 78px; }
-  .tree-head h1 { margin-top: 44px; font-size: 132px; line-height: .92; }
-  .tree-head h1 .l { display: block; font: 300 60px/1.05 var(--sans); letter-spacing: -0.035em; margin-bottom: 14px; }
-  .tree-head p { margin-top: 24px; font: 300 33px/1.2 var(--sans); max-width: 860px; }
+  .tree-head .bar img.logo { height: 78px; }
+  .tree-head h1 { margin-top: 48px; font-size: 116px; line-height: .95; }
+  .tree-head h1 .l { display: block; font: 300 62px/1.05 var(--sans); letter-spacing: -0.04em; margin-bottom: 16px; }
+  .tree-head p { margin-top: 26px; font: 300 33px/1.2 var(--sans); max-width: 700px; text-wrap: balance; }
   .tree { position: absolute; left: -30px; top: 786px; width: 1140px; height: 1134px; background: url("art/arbol.png") center / 100% 100% no-repeat; }
-  .bubble { position: absolute; transform: translate(-50%, -50%); text-align: center; }
-  .bubble .lab { font: 700 25px/1 var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--oliva); display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
-  .bubble .lab img { width: 34px; height: 34px; }
-  .bubble .ln { margin: 18px auto 0; width: var(--w, 210px); height: 132px; background: repeating-linear-gradient(transparent 0 42px, rgba(108,112,101,.45) 42px 44px); }
-  .bubble.center .lab { color: var(--blanco); font-size: 21px; }
-  .bubble.center .ln { background: repeating-linear-gradient(transparent 0 38px, rgba(255,255,255,.55) 38px 40px); height: 80px; }
+  .tree-inner { position: absolute; left: 0; top: 0; width: 1080px; height: 1074px; transform: scale(1.0556); transform-origin: 0 0; }
+  .tree-inner .lab { position: absolute; transform: translate(-50%, -50%); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 8px; line-height: 1; }
+  .tree-inner .lab img { width: 1.35em; height: 1.35em; }
+  .tree-inner .ln { position: absolute; height: 2px; border-radius: 2px; }
 
   /* ---------- 3 · Preguntas + cierre ---------- */
   .q-page { background: var(--papel); padding: 104px 72px 0; }
@@ -92,23 +91,42 @@
 <!-- 1 · ÁRBOL -->
 <section class="page tree-page">
   <div class="tree-head">
-    <div class="bar"><span class="pill"><img class="e" src="emoji/1f33f.png" alt="">Herramienta gratuita</span><img src="../assets/logo-luma.svg" alt="LUMA"></div>
-    <h1><span class="l">Antes de elegir carrera,</span>descubrí<br><span class="u">quién sos</span></h1>
-    <p>Completá las 6 ramas de tu árbol: <b>una por día, 15 minutos</b>.</p>
+    <div class="bar"><span class="pill"><img src="emoji/1f333.png" alt="">Herramienta gratuita</span><img class="logo" src="../assets/logo-luma.svg" alt="LUMA"></div>
+    <h1><span class="l">¿Qué querés estudiar?</span>La respuesta<br>está en <span class="u">vos</span></h1>
+    <p>Completá tu árbol en <b>10 minutos</b> y armá tu primer mapa de <b>quién sos</b>.</p>
   </div>
   <div class="tree">
-    <div class="bubble" style="left:31.7%;top:14.4%"><span class="lab" style="font-size:22px">Habilidades <img src="emoji/1f4a1.png" alt=""></span><div class="ln"></div></div>
-    <div class="bubble" style="left:68.6%;top:14.4%"><span class="lab">Valores <img src="emoji/1f49a.png" alt=""></span><div class="ln"></div></div>
-    <div class="bubble" style="left:19.2%;top:41.4%"><span class="lab">Intereses <img src="emoji/1f3a8.png" alt=""></span><div class="ln"></div></div>
-    <div class="bubble" style="left:81.8%;top:41.4%"><span class="lab">Estilo <img src="emoji/2b50.png" alt=""></span><div class="ln"></div></div>
-    <div class="bubble center" style="left:49.7%;top:42.7%;--w:150px"><span class="lab"><img src="emoji/1f600.png" alt="" style="width:28px;height:28px">Personalidad</span><div class="ln"></div></div>
-    <div class="bubble" style="left:49.7%;top:74.3%;--w:240px"><span class="lab">Historia de vida <img src="emoji/1f33f.png" alt=""></span><div class="ln"></div></div>
+    <div class="tree-inner">
+      <div class="lab" style="left:347px;top:113px;font-size:23px;color:#6C7065">Habilidades <img src="emoji/1f4a1.png" alt=""></div>
+      <i class="ln" style="left:228px;top:170px;width:238px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:236px;top:210px;width:222px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:263px;top:250px;width:167px;background:rgba(108,112,101,.42)"></i>
+      <div class="lab" style="left:736px;top:113px;font-size:23px;color:#6C7065">Valores <img src="emoji/1f49a.png" alt=""></div>
+      <i class="ln" style="left:617px;top:172px;width:239px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:625px;top:212px;width:223px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:653px;top:252px;width:168px;background:rgba(108,112,101,.42)"></i>
+      <div class="lab" style="left:206px;top:380px;font-size:23px;color:#6C7065">Intereses <img src="emoji/1f3a8.png" alt=""></div>
+      <i class="ln" style="left:94px;top:444px;width:223px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:102px;top:489px;width:208px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:128px;top:534px;width:156px;background:rgba(108,112,101,.42)"></i>
+      <div class="lab" style="left:874px;top:382px;font-size:23px;color:#6C7065">Estilo <img src="emoji/2b50.png" alt=""></div>
+      <i class="ln" style="left:762px;top:446px;width:224px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:770px;top:491px;width:209px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:796px;top:536px;width:156px;background:rgba(108,112,101,.42)"></i>
+      <div class="lab" style="left:540px;top:395px;font-size:18px;color:#FFFFFF;flex-direction:column;gap:6px"><img src="emoji/1f600.png" alt="" style="width:30px;height:30px">Personalidad</div>
+      <i class="ln" style="left:463px;top:452px;width:155px;background:rgba(255,255,255,.6)"></i>
+      <i class="ln" style="left:475px;top:491px;width:130px;background:rgba(255,255,255,.6)"></i>
+      <div class="lab" style="left:541px;top:741px;font-size:21px;color:#6C7065">Historia de vida <img src="emoji/1f33f.png" alt=""></div>
+      <i class="ln" style="left:410px;top:788px;width:262px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:419px;top:824px;width:245px;background:rgba(108,112,101,.42)"></i>
+      <i class="ln" style="left:448px;top:861px;width:186px;background:rgba(108,112,101,.42)"></i>
+    </div>
   </div>
 </section>
 
 <!-- 3 · PREGUNTAS + CIERRE -->
 <section class="page q-page">
-  <span class="pill"><img class="e" src="emoji/2728.png" alt="">Preguntas guía</span>
+  <span class="pill"><img src="emoji/2728.png" alt="">Preguntas guía</span>
   <h2>¿Por dónde <span class="u">empezar?</span></h2>
   <p class="sub">Elegí una pregunta por rama y respondé con <b>lo primero que te salga</b>.</p>
   <div class="qgrid">
@@ -128,7 +146,7 @@
     <div>
       <h3>¿Lo terminaste? <img class="e" src="emoji/1f4f8.png" alt=""></h3>
       <p>Respondé el chat donde recibiste este PDF con una foto de tu árbol y <b>lo charlamos</b>. ¿Querés ir más profundo?</p>
-      <span class="pill">Reservá tu primera sesión <img class="e" src="emoji/1f33f.png" alt=""></span>
+      <span class="pill">Reservá tu primera sesión <img src="emoji/1f33f.png" alt=""></span>
     </div>
     <img class="logo" src="../assets/logo-luma-blanco.svg" alt="LUMA">
   </div>
