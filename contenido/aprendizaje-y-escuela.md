@@ -7,14 +7,27 @@ discalculia, hábitos, rutinas, dificultad escolar vs. trastorno del neurodesarr
 
 | Ángulo | Estado |
 |---|---|
-| A. La tarea que cuesta | **En curso**: texto v1 abajo, diseño con plantilla de Canva que pasa Juli |
+| A. La tarea que cuesta | **En curso**: texto v2 maquetado en Canva (copia de la plantilla "Plantilla verde opacidad", diseño `DAHYGScTEj4`) |
 | B. Cada chico llega a la lectura a su ritmo | Pendiente |
 | C. El boletín cuenta una parte | Pendiente (ideal nov–dic, cierre de año escolar) |
 | D. "La escuela sugirió una consulta" | Pendiente (pieza fija para destacadas) |
 
 ---
 
-## A. La tarea que cuesta — texto v1
+## A. La tarea que cuesta — texto v2 (maquetado)
+
+Plantilla Canva: https://canva.link/tzwhfea98swtaj6 (original, sin tocar). Copia de trabajo: `DAHYGScTEj4`.
+Fondos: foto con velo oliva → oliva → salvia → oliva → salvia.
+
+1. **Portada (foto):** ¿Tu hijo/a no quiere hacer la tarea? / Puede ser **una pista.** (subrayado, salvia)
+2. **Oliva:** Más que ganas, es información. / Cuando la tarea se hace cuesta arriba todas las tardes, tu hijo/a te está mostrando algo sobre **cómo aprende.**
+3. **Salvia:** Mirar con curiosidad te da pistas: / ¿En qué materia o tipo de tarea aparece? ¿Le cuesta más empezar o terminar? ¿Qué cambia cuando **la hacen juntos?**
+4. **Oliva:** Detrás de esa tarea puede haber: / • Una consigna que necesita otra explicación. • Una atención que necesita pausas para arrancar y sostenerse. • Una habilidad (leer, escribir, calcular) que todavía se está afianzando. • Una confianza que necesita reforzarse.
+5. **Salvia + LUMA:** Guardalo para la próxima tarde de tarea. / Cuando entendés qué hay detrás, la tarde de tarea cambia. Y si la misma pista se repite, ayuda leerla con una **mirada psicopedagógica.**
+
+Cambios frente a v1: hook nuevo; slides 3 y 4 invertidas (observar → qué puede haber detrás → cierre "qué hay detrás"); CTA como título del cierre; se reemplazó el "Si esto te sirvió, seguime" de la plantilla (prohibido pedir que sigan la cuenta).
+
+## A. La tarea que cuesta — texto v1 (histórico)
 
 - **Le habla a:** la familia
 - **Etapa:** TOFU / orgánico. CTA de guardar.
